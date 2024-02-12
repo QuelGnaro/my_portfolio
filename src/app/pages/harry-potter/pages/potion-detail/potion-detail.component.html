@@ -1,0 +1,87 @@
+<p-breadcrumb
+    (onItemClick)="onItemClick($event)"
+    class="max-w-full"
+    [model]="items"
+    [home]="home"
+></p-breadcrumb>
+<h1 class="text-center">Elixir Detail</h1>
+<div *ngIf="isLoading" class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+<div *ngIf="!isLoading">
+    <p-card class="text-left">
+        <h4 class="my-4">{{ elixir.name }}</h4>
+
+        <div class="card flex flex-column md:flex-row">
+            <div
+                class="w-full md:w-5 flex flex-column justify-content-center gap-3 py-5"
+            >
+                <b>Effects: </b>
+                <p *ngIf="elixir.effect">{{ elixir.effect }}</p>
+                <p *ngIf="!elixir.effect">No effects found!</p>
+                <b>Side Effects: </b>
+                <p *ngIf="elixir.sideEffect">{{ elixir.sideEffects }}</p>
+                <p *ngIf="!elixir.sideEffect">No side-effects found!</p>
+                <b> Characteristics: </b>
+                <p *ngIf="elixir.characteristics">
+                    {{ elixir.characteristics }}
+                </p>
+                <p *ngIf="!elixir.characteristics">No characteristics found!</p>
+            </div>
+            <div class="w-full md:w-2">
+                <p-divider layout="vertical"></p-divider>
+            </div>
+            <div class="flex flex-column md:flex-row">
+                <div
+                    class="w-full md:w-5 flex flex-column justify-content-center gap-3 py-5"
+                >
+                    <b> Manufacturer: </b>
+                    <p *ngIf="elixir.manufacturer">{{ elixir.manufacturer }}</p>
+                    <p *ngIf="!elixir.manufacturer">No manufacturer found!</p>
+                    <b>Difficulty: </b>
+                    <p *ngIf="elixir.difficulty">{{ elixir.difficulty }}</p>
+                    <p *ngIf="!elixir.difficulty">No difficulty found!</p>
+                    <b>Time: </b>
+                    <p *ngIf="elixir.time">{{ elixir.time }}</p>
+                    <p *ngIf="!elixir.time">No time found!</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-5">Ingredient List</h2>
+        <div *ngIf="elixir.ingredients.length">
+            <div class="card flex align-items-center gap-2 flex-wrap">
+                <p-chip
+                    class="cursor-pointer zoom"
+                    *ngFor="let ingredient of elixir.ingredients"
+                    label="{{ ingredient.name }}"
+                    (click)="ingredientDetail(ingredient.id)"
+                ></p-chip>
+            </div>
+        </div>
+        <div
+            *ngIf="!elixir.ingredients.length"
+            class="fst-italic text-center my-2"
+        >
+            <p>Non sono presenti ingredienti</p>
+        </div>
+
+        <h2 class="mt-5">Inventor List</h2>
+        <div *ngIf="elixir.inventors.length">
+            <div class="card flex align-items-center gap-2 flex-wrap">
+                <p-chip
+                    class="cursor-pointer zoom"
+                    *ngFor="let inventor of elixir.inventors"
+                    label="{{ inventor.name }} {{ inventor.surname }}"
+                    (click)="inventorDetail(inventor.id)"
+                ></p-chip>
+            </div>
+        </div>
+        <div
+            *ngIf="!elixir.inventors.length"
+            class="fst-italic text-center my-2"
+        >
+            <p>Non sono presenti inventori</p>
+        </div>
+    </p-card>
+</div>

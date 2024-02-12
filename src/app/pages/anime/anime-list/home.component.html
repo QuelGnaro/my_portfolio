@@ -1,0 +1,118 @@
+<p-breadcrumb class="max-w-full" [model]="items" [home]="home"></p-breadcrumb>
+
+<h1 class="text-center m-3">Anime Search</h1>
+<!-- search bar e button -->
+<div class="flex justify-content-center m-3" [style]="{ height: '30px' }">
+    <form>
+        <input
+            name="search"
+            type="text"
+            pInputText
+            [(ngModel)]="search"
+            placeholder="Search any anime!"
+        />
+        <p-button
+            type="submit"
+            [style]="{ height: '30px', marginLeft: '10px' }"
+            (click)="searchAnime()"
+        >
+            Search
+        </p-button>
+    </form>
+</div>
+<!-- da qui parte il giro di gif in base allo stato di caricamento -->
+<div
+    class="flex justify-content-center"
+    *ngIf="loading === false && animeList.length == 0 && searched === false"
+>
+    <img
+        [style]="{ width: '400px' }"
+        src="https://www.gifcen.com/wp-content/uploads/2022/04/jujutsu-kaisen-gif-9.gif"
+        alt="anime gif"
+    />
+</div>
+
+<div class="flex justify-content-center" *ngIf="loading">
+    <img
+        [style]="{ width: '400px' }"
+        src="https://i.redd.it/tmpp9e8opvo91.gif"
+        alt="juju gif"
+    />
+</div>
+<div class="flex justify-content-center" *ngIf="loading">
+    <img
+        [style]="{ width: '50px' }"
+        src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif"
+        alt="loading gif"
+    />
+</div>
+<div
+    class="flex justify-content-center"
+    *ngIf="loading === false && animeList.length == 0 && searched === true"
+>
+    <img
+        [style]="{ width: '500px' }"
+        src="https://media.tenor.com/QFPClG-dh9sAAAAi/cry-sad.gif"
+        alt="loading gif"
+    />
+    <h1>No Anime Found</h1>
+</div>
+
+<!-- da qua parte la lista di risultati -->
+<div class="m-5" *ngIf="loadAnimelist && !loading">
+    <div class="card">
+        <p-table
+            [value]="animeList"
+            [paginator]="true"
+            [rows]="5"
+            [showCurrentPageReport]="true"
+            [tableStyle]="{ 'min-width': '50rem' }"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            (onPage)="pageChange($event)"
+            [rowsPerPageOptions]="[5, 10, 25]"
+        >
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width: 20%">Poster</th>
+                    <th style="width: 20%">Title</th>
+                    <th style="width: 20%">Japanese Title</th>
+                    <th style="width: 20%">Episodes</th>
+                    <th style="width: 20%">Score</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-animeList>
+                <tr (click)="animeDetail(animeList.id)">
+                    <tg scope="row">
+                        <img
+                            [src]="animeList.images.jpg.large_image_url"
+                            [style]="{
+                                width: '150px',
+                                marginLeft: '30px',
+                                marginTop: '10px'
+                            }"
+                            alt="Anime Poster"
+                        />
+                    </tg>
+                    <td>{{ animeList.title }}</td>
+                    <td>{{ animeList.title_japanese }}</td>
+                    <td>{{ animeList.episodes }}</td>
+                    <td>{{ animeList.score }}</td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="paginatorleft">
+                <p-button
+                    type="button"
+                    icon="pi pi-plus"
+                    styleClass="p-button-text"
+                ></p-button>
+            </ng-template>
+            <ng-template pTemplate="paginatorright">
+                <p-button
+                    type="button"
+                    icon="pi pi-cloud"
+                    styleClass="p-button-text"
+                ></p-button>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

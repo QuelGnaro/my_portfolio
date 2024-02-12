@@ -1,0 +1,27 @@
+.bubble {
+    position: relative;
+    background: #e57c04;
+    color: #ffffff;
+    font-family: Georgia;
+    font-size: 22px;
+    box-shadow: 11px 7px 4px 3px rgba(163, 163, 163, 0.71);
+    text-align: center;
+    line-height: 30px;
+    max-width: 70%;
+    max-height: 40%;
+    border-radius: 10px;
+    padding: 10px 10px 0 10px;
+}
+.bubble:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-width: 0 19px 30px 0;
+    border-color: transparent #e57c04 transparent transparent;
+    bottom: -30px;
+    left: 50%;
+    margin-left: -9.5px;
+}

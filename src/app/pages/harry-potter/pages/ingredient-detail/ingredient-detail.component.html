@@ -1,0 +1,22 @@
+<p-breadcrumb
+    class="max-w-full"
+    [model]="items"
+    [home]="home"
+    [style]="{ cursor: 'pointer' }"
+></p-breadcrumb>
+
+<h1 class="text-center">Ingredients Detail</h1>
+<div *ngIf="isLoading" class="flex justify-content-center" role="status ">
+    <img
+        class="m-4"
+        [style]="{ width: '300px' }"
+        src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/37c4096e-f910-43d4-874f-2ebc0a9abd54/dba5hhv-d3ecff1e-e974-43ae-8450-0fc771e13502.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM3YzQwOTZlLWY5MTAtNDNkNC04NzRmLTJlYmMwYTlhYmQ1NFwvZGJhNWhodi1kM2VjZmYxZS1lOTc0LTQzYWUtODQ1MC0wZmM3NzFlMTM1MDIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.XOhlTkfF_kCik-lG-XvqExFdzrQiWNYsNOxG2uX-J4s"
+        alt=""
+    />
+    <span class="visually-hidden m-4">Loading...</span>
+</div>
+<div *ngIf="!isLoading" class="justify-content-center m-3">
+    <p-card>
+        <h4>{{ ingredient.name }}</h4>
+    </p-card>
+</div>

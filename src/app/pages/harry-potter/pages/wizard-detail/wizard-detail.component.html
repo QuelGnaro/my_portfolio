@@ -1,0 +1,34 @@
+<p-breadcrumb class="max-w-full" [model]="items" [home]="home"></p-breadcrumb>
+<h1 class="text-center">Wizard Detail</h1>
+<p-card
+    class="flex justify-content-center"
+    [style]="{ width: '360px' }"
+    *ngIf="isLoading"
+>
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</p-card>
+<div class="flex flex-wrap gap-4 border-round" *ngIf="!isLoading">
+    <p-card
+        header="Potion List"
+        [style]="{ width: '360px', padding: '16px' }"
+        *ngFor="let elixir of wizard.elixirs"
+        class="shadow-3 surface-card border-round"
+    >
+        <ng-template pTemplate="header" class="p-2">
+            <img
+                alt="Elixir card"
+                src="assets/harry-potter/elixir-placeholder.jpeg"
+            />
+        </ng-template>
+        <h5 class="card-title">{{ elixir.name }}</h5>
+        <ng-template pTemplate="footer">
+            <p-button
+                label="Lista"
+                icon="pi pi-align-left"
+                (click)="elixirDetail(elixir.id)"
+            ></p-button>
+        </ng-template>
+    </p-card>
+</div>

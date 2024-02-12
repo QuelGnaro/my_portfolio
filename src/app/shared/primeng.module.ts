@@ -1,0 +1,32 @@
+import { NgModule } from '@angular/core';
+import { ImageModule } from 'primeng/image';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { CalendarModule } from 'primeng/calendar';
+import { CheckboxModule } from 'primeng/checkbox';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { TriStateCheckboxModule } from 'primeng/tristatecheckbox';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { DataViewModule } from 'primeng/dataview';
+import { PaginatorModule } from 'primeng/paginator';
+import { TableModule } from 'primeng/table';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { ChartModule } from 'primeng/chart';
+import { CarouselModule } from 'primeng/carousel';
+import { GalleriaModule } from 'primeng/galleria';
+import { ChipModule } from 'primeng/chip';
+import { DividerModule } from 'primeng/divider';
+import { ScrollTopModule } from 'primeng/scrolltop';
+
+
+const primeNgModules = [ButtonModule, ImageModule, CardModule, AutoCompleteModule, CalendarModule, CheckboxModule, DropdownModule, InputTextModule, InputNumberModule, TriStateCheckboxModule, SplitButtonModule, DataViewModule, PaginatorModule, TableModule, BreadcrumbModule, ChartModule, CarouselModule, GalleriaModule, ChipModule, DividerModule, ScrollTopModule];
+
+@NgModule({
+  declarations: [],
+  imports: [...primeNgModules],
+  exports: [...primeNgModules]
+})
+export class PrimeNgModule { };

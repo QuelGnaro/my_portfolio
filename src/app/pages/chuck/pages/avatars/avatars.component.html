@@ -1,0 +1,33 @@
+<p-breadcrumb class="max-w-full" [model]="items" [home]="home"></p-breadcrumb>
+<h1 class="text-center"><b> Wall of Legends </b></h1>
+<div class="card flex flex-wrap gap-7 justify-content-center">
+    <p-card
+        header="{{ avatar.name }}"
+        [style]="{ width: '360px' }"
+        *ngFor="let avatar of dummyAvatrs"
+        class="shadow-4"
+    >
+        <ng-template pTemplate="header">
+            <img
+                alt="Card"
+                src="{{ avatar.url }}"
+                [style]="{
+                    height: '290px',
+                    objectFit: 'cover',
+                    objectPosition: 'top'
+                }"
+            />
+        </ng-template>
+        <p>
+            {{ avatar.description }}
+        </p>
+        <ng-template pTemplate="footer">
+            <p-button
+                label="Meet {{ avatar.name }}"
+                icon="pi pi-user"
+                (click)="avatarDetails(avatar.id)"
+                [disabled]="avatar.id !== 1"
+            ></p-button>
+        </ng-template>
+    </p-card>
+</div>

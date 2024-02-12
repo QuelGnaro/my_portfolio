@@ -1,0 +1,111 @@
+<h1 class="text-center">SEARCH BREWERIES</h1>
+
+<div class="spinner-border" role="status" *ngIf="isLoading">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+<div class="felx justify-contet-center">
+    <div class="flex justify-content-center m-3" [style]="{ height: '30px' }">
+        <form>
+            <input
+                name="searchInput"
+                type="text"
+                pInputText
+                class="form-control"
+                [(ngModel)]="searchInput"
+                placeholder="Search any Brewery!"
+            />
+            <p-button type="submit" (click)="search()" severity="info">
+                <i class="pi pi-search"> Search </i>
+            </p-button>
+        </form>
+    </div>
+</div>
+
+<div class="card" [style]="{ marginTop: '50px' }">
+    <p-carousel
+        [value]="onGetBreweries"
+        [numVisible]="3"
+        [numScroll]="3"
+        [circular]="true"
+        autoplayInterval="3000"
+    >
+        <ng-template let-onGetBreweries pTemplate="item">
+            <div
+                [style]="{ height: '450px' }"
+                class="border-1 surface-border border-round m-2 text-center py-5 px-3 relative"
+            >
+                <div class="mb-3">
+                    <img
+                        style="border-radius: 50%; width: 200px"
+                        src="assets/brewery/Screenshot 2024-02-11 165914.png"
+                        alt="Brewery search list"
+                    />
+                </div>
+                <div>
+                    <h4 class="mb-1">
+                        <a
+                            target="_blank"
+                            rel="noreferer"
+                            [style]="{ cursor: 'pointer' }"
+                            [href]="
+                                'http://maps.google.com/?q=' +
+                                onGetBreweries.country +
+                                onGetBreweries.state +
+                                onGetBreweries.name +
+                                onGetBreweries.street
+                            "
+                        ></a>
+                        {{ onGetBreweries.name }}
+                    </h4>
+                    <h6 class="mt-0 mb-3">{{ onGetBreweries.country }}</h6>
+                    <h6 class="mt-0 mb-3">{{ onGetBreweries.state }}</h6>
+                    <h6 class="mt-0 mb-3">{{ onGetBreweries.city }}</h6>
+                    <h6 class="mt-0 mb-3">
+                        {{ onGetBreweries.street }}
+                    </h6>
+                    <div
+                        class="absolute mt-5 flex gap-2"
+                        [style]="{ bottom: '10px', left: '30%' }"
+                    >
+                        <p-button
+                            icon="pi pi-search"
+                            [rounded]="true"
+                            (click)="goToDetails(onGetBreweries.id)"
+                        />
+                        <p-button
+                            icon="pi pi-star-fill"
+                            [rounded]="true"
+                            severity="secondary"
+                        />
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+</div>
+
+<!-- <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr
+                    *ngFor="let brewery of breweries"
+                    (click)="goToDetails(brewery.id)"
+                    style="cursor: pointer"
+                >
+                    <td>{{ brewery.name }}</td>
+                    <td>{{ brewery.city }}</td>
+                    <td>{{ brewery.country }}</td>
+                    <td><a [href]="brewery.url" target="_blank">Website</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->

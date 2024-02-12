@@ -1,0 +1,122 @@
+<p-breadcrumb
+    *ngIf="items.length"
+    class="max-w-full"
+    [model]="items"
+    [home]="home"
+></p-breadcrumb>
+<!-- <div class="mb-2">
+    <button (click)="backHome()" class="btn btn-danger">Home</button>
+  </div> -->
+<div class="flex m-5">
+    <img
+        class="border-round"
+        [src]="anime.images.jpg.large_image_url"
+        alt="Anime Poster"
+    />
+    <div class="m-5">
+        <h1 class="mt-2">{{ anime.title }}</h1>
+        <h6>{{ anime.title_japanese }}</h6>
+    </div>
+</div>
+
+<div class="card">
+    <h3>Background</h3>
+    <p>
+        {{ anime.background }}
+    </p>
+    <p-divider type="solid"></p-divider>
+
+    <h3>Synopsis</h3>
+    <p>
+        {{ anime.synopsis }}
+    </p>
+    <a [href]="anime.url" target="_blank" rel="noreferrer">Link</a>
+</div>
+
+<div class="card">
+    <h3>Statistics</h3>
+    <div class="flex justify-content-center">
+        <p-chart #chart type="pie" [data]="data" [options]="options"></p-chart>
+    </div>
+    <div class="flex flex-wrap justify-content-end">
+        <p><b>Total:</b> {{ statistics.total }}</p>
+    </div>
+</div>
+
+<div class="mt-5">
+    <div class="card">
+        <p-table
+            [value]="episodes"
+            styleClass="p-datatable-gridlines"
+            [tableStyle]="{ 'min-width': '50rem' }"
+        >
+            <ng-template pTemplate="caption">
+                <h1>Episodes</h1>
+                <div class="flex gap-2">
+                    <div class="recap"></div>
+                    <div>Recap</div>
+
+                    <div class="filler"></div>
+                    <div>Filler</div>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Ep.</th>
+                    <th>Title</th>
+                    <th>Jap Title</th>
+                    <th>Title Romanji</th>
+                    <th>Aired</th>
+                    <th>Score</th>
+                    <th>Forum URL</th>
+                    <th>URL</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-episodes>
+                <tr
+                    [ngClass]="{'recap': episodes.recap, 'filler': episodes.filler,}"
+                    (click)="goToDetailEpisode(episodes.id)"
+                    [style]="{ cursor: 'pointer' }"
+                >
+                    <td>{{ episodes.id }}</td>
+                    <td>{{ episodes.title }}</td>
+                    <td>{{ episodes.title_japanese }}</td>
+                    <td>{{ episodes.title_romanji }}</td>
+                    <td>{{ episodes.aired | date }}</td>
+                    <td>{{ episodes.score }}</td>
+                    <td>
+                        <a
+                            [href]="episodes.forum_url"
+                            target="_blank"
+                            rel="noreferrer"
+                            >Forum URL</a
+                        >
+                    </td>
+                    <td>
+                        <a
+                            [href]="episodes.url"
+                            target="_blank"
+                            rel="noreferrer"
+                            >Link Episodio</a
+                        >
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <div class="flex justify-content-center">
+                    <img
+                        src="https://assets-global.website-files.com/61406347b8db463e379e2732/6170b5377b069c085b0991e5_ezgif-2-2260bc5d0d32.gif"
+                        alt="Travolta pulp meme"
+                        [style]="{ width: '60px' }"
+                    />
+                </div>
+            </ng-template>
+        </p-table>
+        <p-scrollTop
+            target="window"
+            styleClass="custom-scrolltop"
+            [threshold]="100"
+            icon="pi pi-arrow-up"
+        ></p-scrollTop>
+    </div>
+</div>

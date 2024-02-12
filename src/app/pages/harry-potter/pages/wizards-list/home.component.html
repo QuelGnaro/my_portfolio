@@ -1,0 +1,91 @@
+<p-breadcrumb class="max-w-full" [model]="items" [home]="home"></p-breadcrumb>
+<div *ngIf="isLoading" class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+<h1 class="text-center">Wizard List</h1>
+<div class="card" *ngIf="!isLoading">
+    <p-dataView #dv [value]="" [layout]="layout">
+        <ng-template pTemplate="header">
+            <div class="flex justify-content-between">
+                <p-dataViewLayoutOptions
+                    [layout]="layout"
+                ></p-dataViewLayoutOptions>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="list">
+            <div class="grid grid-nogutter">
+                <div
+                    class="col-12"
+                    *ngFor="let wizard of wizards; let first = first"
+                >
+                    <div
+                        class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4"
+                        [ngClass]="{ 'border-top-1 surface-border': !first }"
+                    >
+                        <img
+                            class="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round"
+                            src="assets/harry-potter/wizard-placeholder.jpeg"
+                            [alt]="wizard.name && wizard.surname"
+                        />
+                        <div
+                            class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4"
+                        >
+                            <div
+                                class="flex flex-column align-items-center sm:align-items-start gap-3"
+                            >
+                                <div class="text-2xl font-bold text-900">
+                                    {{ wizard.name }} {{ wizard.surname }}
+                                </div>
+                            </div>
+                            <div
+                                class="flex align-items-center justify-content-between"
+                            >
+                                <button
+                                    pButton
+                                    icon="pi pi-user"
+                                    class="p-button-rounded"
+                                    (click)="wizardDetail(wizard.id)"
+                                ></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template let-product pTemplate="grid" let-products>
+            <div class="grid grid-nogutter">
+                <div
+                    class="col-12 sm:col-6 lg:col-12 xl:col-4 p-2"
+                    *ngFor="let wizard of wizards"
+                >
+                    <div
+                        class="p-4 border-1 surface-border surface-card border-round"
+                    >
+                        <div
+                            class="flex flex-column align-items-center gap-3 py-5"
+                        >
+                            <img
+                                class="w-9 shadow-2 border-round"
+                                src="assets/harry-potter/wizard-placeholder.jpeg"
+                                [alt]="wizard.name && wizard.surname"
+                            />
+                            <div class="text-2xl font-bold">
+                                {{ wizard.name }} {{ wizard.surname }}
+                            </div>
+                        </div>
+                        <div
+                            class="flex align-items-center justify-content-between"
+                        >
+                            <button
+                                pButton
+                                icon="pi pi-user"
+                                class="p-button-rounded"
+                                (click)="wizardDetail(wizard.id)"
+                            ></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-dataView>
+</div>
