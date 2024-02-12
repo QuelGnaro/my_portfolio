@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<div class="card" [style]="{ marginTop: '50px' }">
+<div class="card" [style]="{ marginTop: '50px', height: '200px' }">
     <p-carousel
         [value]="onGetBreweries"
         [numVisible]="3"
@@ -32,43 +32,25 @@
     >
         <ng-template let-onGetBreweries pTemplate="item">
             <div
-                [style]="{ height: '450px' }"
-                class="border-1 surface-border border-round m-2 text-center py-5 px-3 relative"
+                [style]="{ height: '120px' }"
+                class="border-1 surface-border border-round m-2 text-center py-2 px-3 relative"
             >
-                <div class="mb-3">
+                <div>
                     <img
-                        style="border-radius: 50%; width: 200px"
+                        style="border-radius: 50%; width: 80px"
                         src="assets/brewery/Screenshot 2024-02-11 165914.png"
                         alt="Brewery search list"
                     />
                 </div>
                 <div>
-                    <h4 class="mb-1">
-                        <a
-                            target="_blank"
-                            rel="noreferer"
-                            [style]="{ cursor: 'pointer' }"
-                            [href]="
-                                'http://maps.google.com/?q=' +
-                                onGetBreweries.country +
-                                onGetBreweries.state +
-                                onGetBreweries.name +
-                                onGetBreweries.street
-                            "
-                        ></a>
+                    <p class="mb-1">
                         {{ onGetBreweries.name }}
-                    </h4>
-                    <h6 class="mt-0 mb-3">{{ onGetBreweries.country }}</h6>
-                    <h6 class="mt-0 mb-3">{{ onGetBreweries.state }}</h6>
-                    <h6 class="mt-0 mb-3">{{ onGetBreweries.city }}</h6>
-                    <h6 class="mt-0 mb-3">
-                        {{ onGetBreweries.street }}
-                    </h6>
+                    </p>
                     <div
                         class="absolute mt-5 flex gap-2"
                         [style]="{ bottom: '10px', left: '30%' }"
                     >
-                        <p-button
+                        <!-- <p-button
                             icon="pi pi-search"
                             [rounded]="true"
                             (click)="goToDetails(onGetBreweries.id)"
@@ -77,7 +59,7 @@
                             icon="pi pi-star-fill"
                             [rounded]="true"
                             severity="secondary"
-                        />
+                        /> -->
                     </div>
                 </div>
             </div>
