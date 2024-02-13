@@ -1,0 +1,7 @@
+::ng-deep.p-datatable {
+    cursor: pointer;
+}
+
+::ng-deep.p-datatable .p-datatable-tbody :hover {
+    background-color: #f3cc9fa4;
+}

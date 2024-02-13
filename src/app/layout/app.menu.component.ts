@@ -1,7 +1,6 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { LayoutService } from './service/app.layout.service';
-import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-menu',
@@ -16,18 +15,19 @@ export class AppMenuComponent implements OnInit {
     ngOnInit() {
         this.model = [
             {
-                label: 'Miei Progetti',
+                label: 'Chi sono!',
                 items: [
-                    { label: 'Anime Search', icon: 'pi pi-fw pi-align-justify', routerLink: ['/my-projects/anime'] },
-                    { label: 'Breweries', icon: 'pi pi-fw pi-align-justify', routerLink: ['/my-projects/breweries'] },
-                    { label: 'Joke app', icon: 'pi pi-fw pi-align-justify', routerLink: ['/my-projects/joke-app'] },
-                    { label: 'Harry Potter', icon: 'pi pi-fw pi-align-justify', routerLink: ['/my-projects/harry-potter'] },
+                    { label: 'Lorenzo Baratti', icon: 'pi pi-fw pi-user', routerLink: ['/my-projects/baratti-lorenzo'] }
                 ]
             },
             {
-                label: 'Sakai',
+                label: 'Miei Progetti',
                 items: [
-                    { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }
+                    { label: 'Anime Search', icon: 'pi pi-fw pi-eye-slash', routerLink: ['/my-projects/anime'] },
+                    { label: 'Breweries', icon: 'pi pi-fw pi-compass', routerLink: ['/my-projects/breweries'] },
+                    { label: 'IMDB', icon: 'pi pi-fw pi-camera', routerLink: ['/my-projects/imdb'] },
+                    { label: 'Joke app', icon: 'pi pi-fw pi-comments', routerLink: ['/my-projects/joke-app'] },
+                    { label: 'Harry Potter', icon: 'pi pi-fw pi-bolt', routerLink: ['/my-projects/harry-potter'] },
                 ]
             },
             {

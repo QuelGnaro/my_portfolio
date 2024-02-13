@@ -4,6 +4,7 @@
     <span class="visually-hidden">Loading...</span>
 </div>
 
+<!-- input e search per breweries -->
 <div class="felx justify-contet-center">
     <div class="flex justify-content-center m-3" [style]="{ height: '30px' }">
         <form>
@@ -22,7 +23,8 @@
     </div>
 </div>
 
-<div class="card" [style]="{ marginTop: '50px', height: '200px' }">
+<!-- carosello che si pesca dal getBreweries -->
+<div class="card" [style]="{ marginTop: '30px', width: '100%' }">
     <p-carousel
         [value]="onGetBreweries"
         [numVisible]="3"
@@ -43,51 +45,72 @@
                     />
                 </div>
                 <div>
-                    <p class="mb-1">
+                    <p class="my-1">
                         {{ onGetBreweries.name }}
                     </p>
-                    <div
-                        class="absolute mt-5 flex gap-2"
-                        [style]="{ bottom: '10px', left: '30%' }"
-                    >
-                        <!-- <p-button
-                            icon="pi pi-search"
-                            [rounded]="true"
-                            (click)="goToDetails(onGetBreweries.id)"
-                        />
-                        <p-button
-                            icon="pi pi-star-fill"
-                            [rounded]="true"
-                            severity="secondary"
-                        /> -->
-                    </div>
                 </div>
             </div>
         </ng-template>
     </p-carousel>
 </div>
 
-<!-- <div>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">City</th>
-                    <th scope="col">Country</th>
-                    <th scope="col">URL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr
-                    *ngFor="let brewery of breweries"
-                    (click)="goToDetails(brewery.id)"
-                    style="cursor: pointer"
-                >
-                    <td>{{ brewery.name }}</td>
-                    <td>{{ brewery.city }}</td>
-                    <td>{{ brewery.country }}</td>
-                    <td><a [href]="brewery.url" target="_blank">Website</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </div> -->
+<!-- tabella risultato ricerca -->
+<div class="card">
+    <p-table
+        [value]="onSearchBreweries"
+        [rows]="5"
+        [tableStyle]="{ 'min-width': '60rem' }"
+        styleClass="p-datatable-striped"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        (onPage)="pageChange($event)"
+        [rowsPerPageOptions]="[5, 10, 25]"
+        [showCurrentPageReport]="true"
+        [paginator]="true"
+    >
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="name" style="width: 20%">
+                    Name <p-sortIcon field="code"></p-sortIcon>
+                </th>
+                <th pSortableColumn="country" style="width: 20%">
+                    country <p-sortIcon field="name"></p-sortIcon>
+                </th>
+                <th pSortableColumn="state" style="width: 20%">
+                    state <p-sortIcon field="category"></p-sortIcon>
+                </th>
+                <th pSortableColumn="city" style="width: 20%">
+                    city <p-sortIcon field="quantity"></p-sortIcon>
+                </th>
+                <th pSortableColumn="type" style="width: 20%">
+                    type <p-sortIcon field="price"></p-sortIcon>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-onSearchBreweries>
+            <tr
+                *ngIf="onSearchBreweries.lenght !== 0"
+                (click)="showDialog(onSearchBreweries.id)"
+            >
+                <td>{{ onSearchBreweries.name }}</td>
+                <td>{{ onSearchBreweries.country }}</td>
+                <td>{{ onSearchBreweries.state }}</td>
+                <td>{{ onSearchBreweries.city }}</td>
+                <td>{{ onSearchBreweries.type }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <!-- bottone di scroll up to top -->
+    <p-scrollTop
+        target="window"
+        styleClass="custom-scrolltop"
+        [threshold]="100"
+        icon="pi pi-arrow-up"
+    ></p-scrollTop>
+</div>
+<p-dialog
+    header="Header"
+    [modal]="true"
+    [(visible)]="visible"
+    [maximizable]="true"
+>
+</p-dialog>

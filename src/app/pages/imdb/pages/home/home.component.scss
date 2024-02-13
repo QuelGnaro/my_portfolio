@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Stile per la barra di ricerca */
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 300px; /* Puoi regolare la larghezza a tuo piacimento */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Stile per l'input di ricerca */
+.search-input {
+    border-radius: 33px;
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+}
+
+/* Stile per il bottone di ricerca */
+.search-button {
+    background-color: #007bff; /* Colore di sfondo del bottone */
+    color: #fff; /* Colore del testo del bottone */
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/* Stile per l'icona di lente d'ingrandimento */
+.search-icon {
+    width: 20px; /* Dimensione dell'icona */
+    height: 20px;
+    fill: #fff; /* Colore dell'icona */
+    margin-right: 8px;
+}
+
+.margine {
+    margin-top: 50px;
+}
+
+.center-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.card-box {
+    margin: auto;
+    border-radius: 33px;
+    max-width: 70%;
+    border: 5px solid #eac117;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-box h2 {
+    color: #333;
+}
+
+.card-box p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.card-box img {
+    max-width: 80%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.card-box .description {
+    font-style: italic;
+}

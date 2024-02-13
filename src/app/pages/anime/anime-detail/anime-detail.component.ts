@@ -102,19 +102,13 @@ export class AnimeDetailComponent implements OnInit {
       });
   }
 
-  // backHome() {
-  //   this.router.navigate(['anime']);
-  // }
-
   goToDetailEpisode(id: number) {
     this.router.navigate([`my-projects/anime/anime-detail/${this.animeId}/episode-detail/${id}`]);
   }
 
-
   updateBreadcrumb() {
-    this.items = [{ label: 'Anime List', routerLink: ['anime-list'] }, { label: this.anime.title, style: { cursor: 'pointer' } }];
+    this.items = [{ label: 'Anime List', routerLink: ['anime-list'], style: { cursor: 'pointer' } }, { label: this.anime.title, style: { cursor: 'pointer' } }];
   }
-
 }
 
 

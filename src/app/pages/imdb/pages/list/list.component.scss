@@ -1,0 +1,37 @@
+/* Aggiorna il CSS per la lista IMDb */
+.imdb-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 50%;
+    margin: auto; /* Centra la lista nella larghezza disponibile */
+    text-align: center;
+}
+
+.imdb-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 23px;
+    border: 2px solid #eac117;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.imdb-list li:hover {
+    background-color: #e6e6e6;
+}
+
+/* Stile per il testo del film */
+.imdb-list li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.imdb-list li a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.box {
+    margin-top: 20px;
+}

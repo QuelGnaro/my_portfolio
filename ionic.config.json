@@ -1,0 +1,7 @@
+{
+  "name": "sakai-ng",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}

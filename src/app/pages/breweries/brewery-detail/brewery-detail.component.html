@@ -1,18 +1,148 @@
-<div class="card" style="width: 20rem; cursor: pointer">
-  <div class="card-body">
-    <h5 class="card-title">{{ brewery.name }}</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">
-      {{ brewery.postal_code }} - {{ brewery.city }}
-    </h6>
-    <ul>
-      <li><strong>Phone: </strong>{{ brewery.phone }}</li>
-      <li><strong>Address: </strong>{{ brewery.street }}</li>
-      <li>
-        <strong>Location: </strong>{{ brewery.country }} ({{ brewery.state }})
-      </li>
-    </ul>
-    <a href="{{ brewery.url }}" class="card-link">Website</a>
-  </div>
-</div>
+<div class="card" style="cursor: pointer">
+    <div *ngIf="!isLoading">
+        <div>
+            <div class="flex">
+                <div>
+                    <h5>{{ brewery.name }}</h5>
+                </div>
+                <div [ngSwitch]="brewery.type">
+                    <div class="flex justify-content-end" *ngSwitchCase="'bar'">
+                        <p><b>Type:</b>{{ brewery.type }}</p>
+                        <img
+                            title="A bar. No brewery equipment on premise."
+                            style="width: 35px; height: 35px"
+                            src="https://cdn.iconscout.com/icon/free/png-512/free-bar-606-1106181.png?f=webp&w=256"
+                            alt="Type of brewery icon"
+                        />
+                    </div>
+                    <div
+                        class="flex justify-content-end"
+                        *ngSwitchCase="'brewpub'"
+                    >
+                        <p><b>Type:</b> {{ brewery.type }}</p>
+                        <img
+                            title="A beer-focused restaurant or restaurant/bar with a brewery on-premise."
+                            style="width: 35px; height: 35px"
+                            src="https://cdn-icons-png.flaticon.com/512/1087/1087965.png"
+                            alt="Type of brewery icon"
+                        />
+                    </div>
+                    <div *ngSwitchCase="'closed'">
+                        <div class="flex justify-content-end">
+                            <p><b>Type:</b> {{ brewery.type }}</p>
+                            <img
+                                title="A location which has been closed."
+                                style="width: 35px; height: 35px"
+                                src="https://cdn-icons-png.flaticon.com/512/2949/2949701.png"
+                                alt="Type of brewery icon"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-content-end"
+                        *ngSwitchCase="'contract'"
+                    >
+                        <p><b>Type:</b> {{ brewery.type }}</p>
+                        <img
+                            title="A brewery that uses another brewery’s equipment."
+                            style="width: 35px; height: 35px"
+                            src="https://cdn-icons-png.freepik.com/512/3846/3846867.png"
+                            alt="Type of brewery icon"
+                        />
+                    </div>
+                    <div
+                        class="flex justify-content-end"
+                        *ngSwitchCase="'large'"
+                    >
+                        <p><b>Type:</b> {{ brewery.type }}</p>
+                        <img
+                            title=" A very large brewery. Likely not for visitors. Ex. Miller-Coors."
+                            style="width: 35px; height: 35px"
+                            src="https://cdn0.iconfinder.com/data/icons/washing-instructions-1/64/Untitled-4-39-512.png"
+                            alt="Type of brewery icon"
+                        />
+                    </div>
+                    <div
+                        class="flex justify-content-end"
+                        *ngSwitchCase="'micro'"
+                    >
+                        <p><b>Type:</b> {{ brewery.type }}</p>
+                        <img
+                            title="Most craft breweries. For example, Samual Adams is still considered a micro brewery"
+                            style="width: 35px; height: 35px"
+                            src="https://cdn1.iconfinder.com/data/icons/curious-shop-1/80/curiosshop-02-512.png"
+                            alt="Type of brewery icon"
+                        />
+                    </div>
+                    <div
+                        class="flex justify-content-end"
+                        *ngSwitchCase="'nano'"
+                    >
+                        <p><b>Type:</b> {{ brewery.type }}</p>
+                        <img
+                            title="An extremely small brewery which typically only distributes locally."
+                            style="width: 35px; height: 35px"
+                            src="https://cdn-icons-png.flaticon.com/512/2210/2210742.png"
+                            alt="Type of brewery icon"
+                        />
+                    </div>
+                    <div
+                        class="flex justify-content-end"
+                        *ngSwitchCase="'planning'"
+                    >
+                        <p><b>Type:</b> {{ brewery.type }}</p>
+                        <img
+                            title="  A brewery in planning or not yet opened to the public."
+                            style="width: 35px; height: 35px"
+                            src="https://cdn-icons-png.flaticon.com/512/7988/7988649.png"
+                            alt="Type of brewery icon"
+                        />
+                    </div>
+                    <div
+                        class="flex justify-content-end"
+                        *ngSwitchCase="'proprietor'"
+                    >
+                        <p><b>Type:</b> {{ brewery.type }}</p>
+                        <img
+                            title="Similar to contract brewing but refers more to a brewery incubator."
+                            style="width: 35px; height: 35px"
+                            src="https://cdn-icons-png.flaticon.com/512/2029/2029946.png"
+                            alt="Type of brewery icon"
+                        />
+                    </div>
+                    <div
+                        class="flex justify-content-end"
+                        *ngSwitchCase="'regional'"
+                    >
+                        <p><b>Type:</b> {{ brewery.type }}</p>
+                        <img
+                            title="A regional location of an expanded brewery. Ex.Sierra Nevada's Asheville, NC location."
+                            style="width: 35px; height: 35px"
+                            src="https://cdn4.iconfinder.com/data/icons/miscellaneous-143-color-shadow/128/region_field_zone_scope_realm_area_map_gps_navigation_location_whereabouts-23-512.png"
+                            alt="Type of brewery icon"
+                        />
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li><strong>Phone: </strong>{{ brewery.phone }}</li>
+                <li>
+                    <strong>Location: </strong>{{ brewery.country }} ({{
+                        brewery.state
+                    }})
+                </li>
+                <li><strong>Address: </strong>{{ brewery.street }}</li>
+                <li><strong>Postal code: </strong>{{ brewery.postal_code }}</li>
+            </ul>
+            <a href="{{ brewery.url }}" class="card-link">Website</a>
+        </div>
+    </div>
 
-<button class="btn btn-light" routerLink="/home">Back</button>
+    <div *ngIf="isLoading">
+        <img
+            style="width: 100%"
+            src="https://media.tenor.com/8PSTyxIBxH0AAAAi/clinking-beer-mugs-joypixels.gif"
+            alt="Beers Cheers"
+        />
+    </div>
+</div>
