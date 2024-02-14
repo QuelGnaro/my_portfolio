@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 
 import { ImdbRoutingModule } from './imdb-routing.module';
-import { HomeComponent } from './home/home.component';
-import { DetailComponent } from './detail/detail.component';
-import { ListComponent } from './list/list.component';
-import { PrimeNgModule } from 'src/app/shared/primeng.module';
+import { HomeComponent } from './pages/home/home.component';
+import { DetailComponent } from './pages/detail/detail.component';
+import { ListComponent } from './pages/list/list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { PrimeNgModule } from 'src/app/shared/primeng.module';
+
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ListComponent
   ],
   imports: [
-    ImdbRoutingModule, PrimeNgModule, SharedModule
+    ImdbRoutingModule, SharedModule, PrimeNgModule
   ]
 })
 export class ImdbModule { }

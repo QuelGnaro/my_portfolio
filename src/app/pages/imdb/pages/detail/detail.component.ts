@@ -12,6 +12,16 @@ export class DetailComponent {
   selectedMovie: any;
 
   constructor(private route: ActivatedRoute, private apiService: ImdbService, private router: Router) { }
+
+  selectMovie(imdbId: string) {
+    this.apiService.getMoviesDetails(imdbId).subscribe(
+      (data) => {
+        this.selectedMovie = data;
+        console.log(data);
+
+      }
+    );
+  }
 }
 
 

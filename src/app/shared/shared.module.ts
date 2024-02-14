@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogService } from 'primeng/dynamicdialog';
 
-const sharedModule = [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule,];
+const sharedModule = [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule];
 
 @NgModule({
   declarations: [],

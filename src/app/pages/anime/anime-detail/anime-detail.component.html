@@ -5,17 +5,17 @@
     [home]="home"
 ></p-breadcrumb>
 
-<div class="flex flex-wrap m-5 justify-content-center">
+<div class="flex m-5 justify-content-center">
     <img
-        [style]="{ width: '80vh' }"
+        [style]="{ height: '50vh' }"
         class="border-round"
         [src]="anime.images.jpg.large_image_url"
         alt="Anime Poster"
     />
-    <div class="m-5">
-        <h1 class="mt-2">{{ anime.title }}</h1>
-        <h6>{{ anime.title_japanese }}</h6>
-    </div>
+</div>
+<div class="flex justify-content-start m-5">
+    <h1 class="mt-2">{{ anime.title }}</h1>
+    <h6>{{ anime.title_japanese }}</h6>
 </div>
 
 <div class="card">

@@ -15,7 +15,6 @@ export class ImdbService {
     return this.http.get(`${this.BASE_URL}?q=${movieName}`).pipe(
       map((response: any) => {
         console.log(response);
-
         return response.description;
       })
     );
