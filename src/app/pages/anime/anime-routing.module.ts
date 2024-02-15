@@ -13,7 +13,6 @@ import { EpisodeDetailComponent } from './episode-detail/episode-detail.componen
     { path: 'anime-detail/:animeId', component: AnimeDetailComponent },
     { path: 'anime-detail/:animeId/episode-detail/:episodeId', component: EpisodeDetailComponent },
     { path: '', redirectTo: 'search-list', pathMatch: 'full', },
-    // { path: '**', redirectTo: 'search-list', pathMatch: 'full' },
   ]
   )],
   exports: [RouterModule],

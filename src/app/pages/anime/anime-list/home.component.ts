@@ -15,10 +15,6 @@ export class HomeComponent {
   animeList: Anime[] = [];
   selectedItem: any;
 
-  // variabili per breadcrumb
-  items: MenuItem[] | undefined = [{ label: 'Anime List', routerLink: ['anime-list'], style: { cursor: 'pointer' } }];
-  home: MenuItem | undefined = { icon: 'pi pi-home', routerLink: '/' };
-
   // variabili per loading
   loading: boolean = false;
   loadAnimelist: boolean = false;

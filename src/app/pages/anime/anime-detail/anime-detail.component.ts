@@ -21,10 +21,6 @@ export class AnimeDetailComponent implements OnInit {
   statistics: Statistic = new Statistic();
   episodes: Episode[] = [];
 
-  // elements for the breadcrumb
-  items: MenuItem[] | undefined = [{ label: 'Anime List', routerLink: ['anime-list'], style: { cursor: 'pointer' } }, { label: '', }];
-  home: MenuItem | undefined = { icon: 'pi pi-home', routerLink: '/' };
-
   // elements for the chart
   data: any;
   showChart: boolean = false;
@@ -39,7 +35,6 @@ export class AnimeDetailComponent implements OnInit {
       this.animeId = params['animeId'];
       this.animeService.getAnimeById(this.animeId).subscribe((res: Anime) => {
         this.anime = res;
-        this.updateBreadcrumb();
       });
       this.animeService
         .getEpisodes(this.animeId)
@@ -104,10 +99,6 @@ export class AnimeDetailComponent implements OnInit {
 
   goToDetailEpisode(id: number) {
     this.router.navigate([`my-projects/anime/anime-detail/${this.animeId}/episode-detail/${id}`]);
-  }
-
-  updateBreadcrumb() {
-    this.items = [{ label: 'Anime List', routerLink: ['anime-list'], style: { cursor: 'pointer' } }, { label: this.anime.title, style: { cursor: 'pointer' } }];
   }
 }
 

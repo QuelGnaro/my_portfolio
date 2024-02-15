@@ -1,9 +1,8 @@
-<p-breadcrumb class="max-w-full" [model]="items" [home]="home"></p-breadcrumb>
 <div *ngIf="isLoading" class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
 </div>
 <h1 class="text-center">Wizard List</h1>
-<div class="card" *ngIf="!isLoading">
+<div *ngIf="!isLoading">
     <p-dataView #dv [value]="" [layout]="layout">
         <ng-template pTemplate="header">
             <div class="flex justify-content-between">

@@ -16,10 +16,6 @@ export class IngredientDetailComponent implements OnInit {
   wizardId: string = '';
   elixirId: string = '';
 
-  items: MenuItem[] | undefined;
-
-  home: MenuItem | undefined;
-
   constructor(
     private route: ActivatedRoute,
     private harryPotterService: HarryPotterService
@@ -38,10 +34,6 @@ export class IngredientDetailComponent implements OnInit {
         this.ingredient = res;
         this.setTimeout();
       });
-
-    this.items = [{ label: 'Wizard List', routerLink: ['my-projects/harry-potter/wizard-list'], preserveFragment: false }, { label: 'Wizard Detail', routerLink: [`wizard-detail/${this.wizardId}`] }, { label: 'Elixir Detail', routerLink: [`wizard-detail/${this.wizardId}/elixir-detail/${this.elixirId}`] }, { label: 'Ingredient Detail' }];
-
-    this.home = { icon: 'pi pi-home', routerLink: '/' };
   }
 
   setTimeout() {

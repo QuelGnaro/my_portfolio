@@ -41,9 +41,6 @@ export class AvatarsComponent {
     },
   ];
 
-  items: MenuItem[] | undefined = [{ label: 'Legends List', routerLink: ['joke-app'] }];
-  home: MenuItem | undefined = { icon: 'pi pi-home', routerLink: '/' };
-
   constructor(private router: Router) { }
 
   avatarDetails(id: number) {

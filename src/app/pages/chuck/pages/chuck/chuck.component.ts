@@ -16,10 +16,6 @@ export class ChuckComponent implements OnInit {
   categories: ICategory[] = [];
   show: boolean = false;
 
-  items: MenuItem[] | undefined = [{ label: 'Legends List', routerLink: ['joke-app'], style: { cursor: 'pointer' } }, { label: 'Chuck Norris', style: { cursor: 'pointer' } }];
-
-  home: MenuItem | undefined = { icon: 'pi pi-home', routerLink: '/' };
-
   constructor(private apiService: JokeService) { }
   ngOnInit(): void {
     this.apiService.getCategories();

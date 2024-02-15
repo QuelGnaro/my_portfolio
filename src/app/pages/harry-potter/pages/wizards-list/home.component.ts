@@ -15,10 +15,6 @@ export class HomeComponent implements OnInit {
 
   layout: string = 'list';
 
-  items: MenuItem[] | undefined;
-
-  home: MenuItem | undefined;
-
   constructor(
     private harryPotterService: HarryPotterService,
     private router: Router
@@ -30,9 +26,6 @@ export class HomeComponent implements OnInit {
       this.wizards = res;
       this.isLoading = false;
     });
-    this.items = [{ label: 'Wizard List', routerLink: ['wizard-list'] }];
-
-    this.home = { icon: 'pi pi-home', routerLink: '/' };
   }
 
   wizardDetail(id: string) {

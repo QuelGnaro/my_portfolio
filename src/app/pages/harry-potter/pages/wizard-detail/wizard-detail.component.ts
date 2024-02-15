@@ -13,11 +13,6 @@ export class WizardDetailComponent implements OnInit {
   wizardId: string = '';
   wizard: Wizard = new Wizard();
 
-  items: MenuItem[] | undefined;
-
-  home: MenuItem | undefined;
-
-
   constructor(
     private route: ActivatedRoute,
     private harryPotterService: HarryPotterService,
@@ -35,10 +30,6 @@ export class WizardDetailComponent implements OnInit {
         this.wizard = res;
         this.isLoading = false;
       });
-
-    this.items = [{ label: 'Wizard List', routerLink: ['wizard-list'] }, { label: 'Wizard Detail' }];
-
-    this.home = { icon: 'pi pi-home', routerLink: '/' };
   }
 
   elixirDetail(id: string) {

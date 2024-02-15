@@ -1,5 +1,3 @@
-<p-breadcrumb class="max-w-full" [model]="items" [home]="home"></p-breadcrumb>
-
 <h1 class="text-center m-3">Anime Search</h1>
 <!-- search bar e button -->
 <div class="flex justify-content-center m-3" [style]="{ height: '30px' }">
@@ -60,7 +58,7 @@
 
 <!-- da qua parte la lista di risultati -->
 <div class="m-5" *ngIf="loadAnimelist && !loading">
-    <div class="card">
+    <div>
         <p-table
             [value]="animeList"
             [paginator]="true"

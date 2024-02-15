@@ -18,10 +18,6 @@ export class PotionDetailComponent implements OnInit {
   elixir: ElixirDetail = new ElixirDetail();
   wizardId: string = '';
 
-  // variabili per breadcrumb
-  items: MenuItem[] | undefined = [{ label: 'Wizard List', preserveFragment: false, routerLink: [''] }, { label: 'Wizard Detail', routerLink: [`asd`] }, { label: 'Elixir Detail' }];
-  home: MenuItem | undefined = { icon: 'pi pi-home', routerLink: '/' };
-
   constructor(
     private route: ActivatedRoute,
     private harryPotterService: HarryPotterService,
@@ -45,12 +41,6 @@ export class PotionDetailComponent implements OnInit {
     this.router.navigate([`my-projects/harry-potter/wizard-detail/${this.wizardId}/elixir-detail/${this.elixirId}/ingredient-detail/${id}`]);
   }
 
-  updateBreadcrumb() {
-    this.items = [{ label: 'Wizard List', preserveFragment: false, routerLink: ['wizard-list'] }, { label: 'Wizard Detail test', routerLink: [`../`], style: { cursor: 'pointer' } },
-    { label: 'Elixir Detail', style: { cursor: 'pointer' } }
-    ];
-
-  }
   getElixir() {
     this.harryPotterService
       .getElixirById(this.elixirId)
