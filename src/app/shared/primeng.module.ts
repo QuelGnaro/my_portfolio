@@ -22,9 +22,11 @@ import { DividerModule } from 'primeng/divider';
 import { ScrollTopModule } from 'primeng/scrolltop';
 import { DialogModule } from 'primeng/dialog';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { TimelineModule } from 'primeng/timeline';
 
 
-const primeNgModules = [ButtonModule, ImageModule, CardModule, AutoCompleteModule, CalendarModule, CheckboxModule, DropdownModule, InputTextModule, InputNumberModule, TriStateCheckboxModule, SplitButtonModule, DataViewModule, PaginatorModule, TableModule, BreadcrumbModule, ChartModule, CarouselModule, GalleriaModule, ChipModule, DividerModule, ScrollTopModule, DialogModule, DynamicDialogModule];
+const primeNgModules = [ButtonModule, ImageModule, CardModule, AutoCompleteModule, CalendarModule, CheckboxModule, DropdownModule, InputTextModule, InputNumberModule, TriStateCheckboxModule, SplitButtonModule, DataViewModule, PaginatorModule, TableModule, BreadcrumbModule, ChartModule, CarouselModule, GalleriaModule, ChipModule, DividerModule, ScrollTopModule, DialogModule, DynamicDialogModule, TabMenuModule, TimelineModule];
 
 @NgModule({
   declarations: [],

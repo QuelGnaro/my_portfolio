@@ -81,7 +81,7 @@
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-animeList>
-                <tr (click)="animeDetail(animeList.id)">
+                <tr (click)="animeDetail(animeList.id)" style="cursor: pointer">
                     <tg scope="row">
                         <img
                             [src]="animeList.images.jpg.large_image_url"
