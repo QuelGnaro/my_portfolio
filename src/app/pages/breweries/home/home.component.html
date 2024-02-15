@@ -1,4 +1,4 @@
-<h1 class="text-center">SEARCH BREWERIES</h1>
+<h1 class="text-center text-6xl font-bold text-primary">SEARCH BREWERIES</h1>
 
 <div class="spinner-border" role="status" *ngIf="isLoading">
     <span class="visually-hidden">Loading...</span>
@@ -16,7 +16,11 @@
                 [(ngModel)]="searchInput"
                 placeholder="Search any Brewery!"
             />
-            <p-button type="submit" (click)="search()" severity="info">
+            <p-button
+                type="submit"
+                (click)="search()"
+                style="margin-left: 10px"
+            >
                 <i class="pi pi-search"> Search </i>
             </p-button>
         </form>
@@ -69,20 +73,40 @@
     >
         <ng-template pTemplate="header">
             <tr>
-                <th pSortableColumn="name" style="width: 20%">
+                <th
+                    pSortableColumn="name"
+                    style="width: 20%"
+                    class="text-primary"
+                >
                     Name <p-sortIcon field="code"></p-sortIcon>
                 </th>
-                <th pSortableColumn="country" style="width: 20%">
-                    country <p-sortIcon field="name"></p-sortIcon>
+                <th
+                    pSortableColumn="country"
+                    style="width: 20%"
+                    class="text-primary"
+                >
+                    Country <p-sortIcon field="name"></p-sortIcon>
                 </th>
-                <th pSortableColumn="state" style="width: 20%">
-                    state <p-sortIcon field="category"></p-sortIcon>
+                <th
+                    pSortableColumn="state"
+                    style="width: 20%"
+                    class="text-primary"
+                >
+                    State <p-sortIcon field="category"></p-sortIcon>
                 </th>
-                <th pSortableColumn="city" style="width: 20%">
-                    city <p-sortIcon field="quantity"></p-sortIcon>
+                <th
+                    pSortableColumn="city"
+                    style="width: 20%"
+                    class="text-primary"
+                >
+                    City <p-sortIcon field="quantity"></p-sortIcon>
                 </th>
-                <th pSortableColumn="type" style="width: 20%">
-                    type <p-sortIcon field="price"></p-sortIcon>
+                <th
+                    pSortableColumn="type"
+                    style="width: 20%"
+                    class="text-primary"
+                >
+                    Type <p-sortIcon field="price"></p-sortIcon>
                 </th>
             </tr>
         </ng-template>
