@@ -65,4 +65,24 @@
             </p>
         </div>
     </section>
+    <section
+        pAnimateOnScroll
+        enterClass="fadeinright"
+        leaveClass="fadeoutright"
+        class="box shadow-7 justify-content-center align-items-center border-round animation-duration-2000 animation-ease-in-out glass-card"
+        style="margin-bottom: 3rem"
+    >
+        <div class="text-center">
+            <h2 class="text-primary">skills</h2>
+            <p>quello che ho imparato durante il corso di formazione:</p>
+        </div>
+        <div style="width: 100%" class="skills-array">
+            <img
+                src="{{ item.url }}"
+                alt="logo skill"
+                style="width: 9rem"
+                *ngFor="let item of skillsArray"
+            />
+        </div>
+    </section>
 </section>
