@@ -5,17 +5,26 @@
     padding: 20px;
 }
 .glass-card {
-    background-color: #111827e3; /* Set the background color with some transparency */
-    backdrop-filter: blur(10px); /* Apply a blur effect to the background */
-    border-radius: 10px; /* Add rounded corners to the card */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow effect to the card */
-    padding: 20px; /* Add some padding to the card */
+    background-color: #111827e3;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
 .skills-array {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 30px;
     margin-top: 20px;
+}
+
+.skill-logo {
+    width: 9rem;
+    cursor: pointer;
+}
+.skill-logo:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
 }
