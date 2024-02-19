@@ -14,9 +14,9 @@ export class NavBarComponent {
 
   ngOnInit() {
     this.items = [
-      { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: ['/my-projects/baratti-lorenzo/home'] },
+      { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: ['/my-portfolio/home'] },
       // { label: 'Electron', icon: 'pi pi-fw pi-calendar', routerLink: ['/my-projects/baratti-lorenzo/electron'] },
-      { label: 'Figma', icon: 'pi pi-fw pi-pencil', routerLink: ['/my-projects/baratti-lorenzo/figma'] },
+      { label: 'Figma', icon: 'pi pi-fw pi-pencil', routerLink: ['/my-porfolio/figma'] },
       // { label: 'Ionic', icon: 'pi pi-fw pi-file', routerLink: ['/my-projects/baratti-lorenzo/ionic'] },
     ];
 

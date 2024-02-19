@@ -25,9 +25,10 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { TimelineModule } from 'primeng/timeline';
 import { AnimateOnScrollModule } from 'primeng/animateonscroll';
+import { AccordionModule } from 'primeng/accordion';
 
 
-const primeNgModules = [ButtonModule, ImageModule, CardModule, AutoCompleteModule, CalendarModule, CheckboxModule, DropdownModule, InputTextModule, InputNumberModule, TriStateCheckboxModule, SplitButtonModule, DataViewModule, PaginatorModule, TableModule, BreadcrumbModule, ChartModule, CarouselModule, GalleriaModule, ChipModule, DividerModule, ScrollTopModule, DialogModule, DynamicDialogModule, TabMenuModule, TimelineModule, AnimateOnScrollModule];
+const primeNgModules = [ButtonModule, ImageModule, CardModule, AutoCompleteModule, CalendarModule, CheckboxModule, DropdownModule, InputTextModule, InputNumberModule, TriStateCheckboxModule, SplitButtonModule, DataViewModule, PaginatorModule, TableModule, BreadcrumbModule, ChartModule, CarouselModule, GalleriaModule, ChipModule, DividerModule, ScrollTopModule, DialogModule, DynamicDialogModule, TabMenuModule, TimelineModule, AnimateOnScrollModule, AccordionModule];
 
 @NgModule({
   declarations: [],

@@ -17,7 +17,7 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Chi sono!',
                 items: [
-                    { label: 'Lorenzo Baratti', icon: 'pi pi-fw pi-user', routerLink: ['/my-projects/baratti-lorenzo'] }
+                    { label: 'Lorenzo Baratti', icon: 'pi pi-fw pi-user', routerLink: ['my-portfolio/home'] }
                 ]
             },
             {

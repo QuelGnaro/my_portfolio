@@ -6,11 +6,11 @@ import { ElectronComponent } from './pages/electron/electron.component';
 import { FigmaComponent } from './pages/figma/figma.component';
 
 const routes: Routes = [
-  { path: 'home', component: BarattiLorenzoComponent },
-  { path: 'ionic', component: IonicComponent },
-  { path: 'electron', component: ElectronComponent },
-  { path: 'figma', component: FigmaComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: 'my-portfolio/home', component: BarattiLorenzoComponent },
+  { path: 'my-portfolio/ionic', component: IonicComponent },
+  { path: 'my-portfolio/electron', component: ElectronComponent },
+  { path: 'my-porfolio/figma', component: FigmaComponent },
+  { path: '', redirectTo: 'my-portfolio/home', pathMatch: 'full' }
 ];
 
 @NgModule({

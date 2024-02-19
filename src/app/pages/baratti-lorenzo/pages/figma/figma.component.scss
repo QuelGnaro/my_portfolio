@@ -5,3 +5,31 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
+h1 {
+    font-family: "archivo black";
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "archivo";
+}
+p {
+    font-family: "roboto";
+    font-size: 17px;
+    margin-bottom: 20px;
+    line-height: 2.2rem;
+}
+.preview {
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.preview:hover {
+    cursor: pointer;
+    -webkit-filter: brightness(70%);
+}

@@ -83,6 +83,12 @@ export class MyService {
       url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png',
       description: ''
     },
+    {
+      skillId: 14,
+      name: 'Postman',
+      url: 'https://www.svgrepo.com/show/354202/postman-icon.svg',
+      description: ''
+    },
   ];
 
 }

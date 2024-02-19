@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './figma.component.scss'
 })
 export class FigmaComponent {
+  visible: boolean = false;
 
+  showDialog() {
+    this.visible = true;
+  }
 }
