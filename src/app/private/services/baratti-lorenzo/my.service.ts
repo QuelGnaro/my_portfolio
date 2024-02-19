@@ -9,7 +9,7 @@ export class MyService {
       skillId: 1,
       name: 'Angular',
       url: 'https://www.svgrepo.com/show/373427/angular.svg',
-      description: ''
+      description: 'ciao sono angular'
     },
     {
       skillId: 2,
@@ -84,4 +84,5 @@ export class MyService {
       description: ''
     },
   ];
+
 }

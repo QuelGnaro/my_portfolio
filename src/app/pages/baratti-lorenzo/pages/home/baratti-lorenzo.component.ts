@@ -15,7 +15,7 @@ export class BarattiLorenzoComponent {
   }
 
   visible: boolean = false;
-  showDialog(id: number) {
+  showDialog() {
     this.visible = true;
   }
 }

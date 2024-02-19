@@ -1,13 +1,9 @@
 <section class="flex justify-content-between">
     <div>
-        <h1>Lorenzo Baratti</h1>
-        <h2>da storemanager a web-dev</h2>
+        <h1 class="text-primary">Lorenzo Baratti</h1>
+        <h2>dal retail al web development</h2>
     </div>
-
-    Linkedin link
-    <a href="https://www.linkedin.com/in/baratti-lorenzo3/" target="_blank"
-        >Link</a
-    >
+    <img src="" alt="" />
 </section>
 <div class="my-6">
     <app-nav-bar></app-nav-bar>
@@ -23,21 +19,27 @@
         <div>
             <h2 class="text-center text-primary">Chi sono</h2>
             <p>
-                Sono un ragazzo nato e cresciuto nella bassa bresciana a
-                Calvisano. Negli ultimi 7 anni anni ho lavorato nel settore del
-                retail, dove ho ricoperto il ruolo di storemanager per 5 anni e
-                quello di commerciale in parallelo per gli ultimi 2 anni.
-                Durante questo periodo ho sviluppato competenze di leadership,
-                gestione del personale e organizzazione del lavoro e un ottima
-                gestione del cliente sia in B2B che B2C. Nel 2023 ho deciso di
-                seguire le mie passioni, ho deciso di cambiare completamente
-                vita e dedicarmi allo sviluppo web. Ho frequentato il corso di
-                formazione per front-end web developer della 24Ore Business
-                School di Milano, dove ho appreso le basi dell'HTML, CSS,
-                JavaScript e TypeScript. Ho inoltre imparato ad utilizzare
-                Angular, Ionic ed Electron. Sono appassionato di tecnologia e mi
-                piace imparare nuove cose. Sono in grado di lavorare in team e
-                di adattarmi a nuove situazioni.
+                Sono originario della Bassa Bresciana, precisamente di
+                Calvisano, dove ho trascorso la mia infanzia e adolescenza.
+                Negli ultimi 7 anni, ho svolto un ruolo significativo nel
+                settore del retail, assumendo le responsabilità di store manager
+                per un periodo di 5 anni, affiancato da un ruolo commerciale
+                parallelo negli ultimi 2 anni. Durante questa esperienza, ho
+                affinato le mie competenze in leadership, gestione del personale
+                e organizzazione del lavoro, sviluppando una solida capacità di
+                gestione del cliente, sia nel contesto B2B che B2C. Nel 2023, ho
+                intrapreso una trasformazione radicale per seguire la mia
+                passione: ho deciso di dedicarmi completamente allo sviluppo
+                web. Ho compiuto questo passo iscrivendomi al corso di
+                formazione per front-end web developer presso la 24Ore Business
+                School di Milano. Durante il corso, ho acquisito le competenze
+                fondamentali di HTML, CSS, JavaScript e TypeScript, oltre a
+                familiarizzare con strumenti come Angular, Ionic ed Electron.
+                Attualmente, risiedo nella provincia di Monza, dove continuo a
+                coltivare la mia passione per la tecnologia e il web. Sono
+                disponibile a intraprendere nuove sfide e a contribuire a
+                progetti innovativi nel campo dello sviluppo web, lavorando in
+                team.
             </p>
         </div>
     </div>
@@ -51,17 +53,19 @@
         <div>
             <h2 class="text-center text-primary">Le mie passioni</h2>
             <p>
-                Sono un appassionato di motori, in particolare di moto! Al
-                mometo posseggo una Kawasaki Z750 del 2005. Mi piace viaggiare e
-                scoprire nuovi posti, in particolare mi piace la montagna perchè
-                è li che si trovano le curve. Sono ovviamente un appassionato di
-                tecnologia, ho imparato a riparare diversi dispositivi
-                elettronici durante il mio percorso lavorativo e anche grazie
-                alla mia curiosità sono stato in grado di assemblare il pc da
-                cui lavoro e non solo. Ebbene si perchè la macchina che ho
-                assemblato è stata pensata anche per far girare i videogiochi
-                più esigenti. Mi piace leggere manga e guardare anime, spero un
-                giorno di poter vedere il finale di One Piece.
+                Sono un appassionato di motori, con una predilezione speciale
+                per le moto. Attualmente possiedo una Kawasaki Z750 del 2005,
+                che mi regala emozioni uniche ad ogni viaggio. Amo esplorare
+                nuovi luoghi e vivere avventure, ed ho particolare inclinazione
+                verso le montagne, dove le curve si fondono con il paesaggio. La
+                tecnologia è un'altra delle mie grandi passioni: durante il mio
+                percorso lavorativo ho acquisito competenze nella riparazione di
+                dispositivi elettronici e ho anche avuto il piacere di
+                assemblare il mio PC, un'esperienza che mi ha permesso di
+                ottimizzare la macchina per eseguire anche i videogiochi più
+                esigenti. Infine, mi appassionano il mondo dei manga e degli
+                anime. Spero di assistere un giorno all’epico finale di One
+                Piece.
             </p>
         </div>
     </div>
@@ -75,7 +79,7 @@
 >
     <div class="text-center">
         <h2 class="text-primary">Skills</h2>
-        <p>quello che ho imparato durante il corso di formazione:</p>
+        <p>Competenze acquisite durante il corso di formazione:</p>
     </div>
     <div style="width: 100%" class="skills-array">
         <div *ngFor="let item of skillsArray">
@@ -83,7 +87,7 @@
                 class="skill-logo"
                 src="{{ item.url }}"
                 alt="logo skill"
-                (click)="getSkillId(item.id)"
+                (click)="showDialog()"
             />
             <h5 class="text-center">{{ item.name }}</h5>
         </div>
