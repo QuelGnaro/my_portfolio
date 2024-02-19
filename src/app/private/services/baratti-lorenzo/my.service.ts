@@ -65,5 +65,23 @@ export class MyService {
       url: 'https://www.svgrepo.com/show/373863/nest-middleware-js.svg',
       description: ''
     },
+    {
+      skillId: 11,
+      name: 'NgRx',
+      url: 'https://cdn.worldvectorlogo.com/logos/ngrx.svg',
+      description: ''
+    },
+    {
+      skillId: 12,
+      name: 'PrimeNG',
+      url: 'https://www.primefaces.org/presskit/primeng-logo.png',
+      description: ''
+    },
+    {
+      skillId: 13,
+      name: 'Bootstrap',
+      url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png',
+      description: ''
+    },
   ];
 }

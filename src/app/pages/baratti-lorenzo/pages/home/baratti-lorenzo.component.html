@@ -13,7 +13,7 @@
     <app-nav-bar></app-nav-bar>
 </div>
 <section class="background-dev">
-    <section
+    <div
         pAnimateOnScroll
         enterClass="fadeinleft"
         leaveClass="fadeoutleft"
@@ -40,8 +40,8 @@
                 di adattarmi a nuove situazioni.
             </p>
         </div>
-    </section>
-    <section
+    </div>
+    <div
         pAnimateOnScroll
         enterClass="fadeinright"
         leaveClass="fadeoutright"
@@ -64,33 +64,35 @@
                 giorno di poter vedere il finale di One Piece.
             </p>
         </div>
-    </section>
-    <section
-        pAnimateOnScroll
-        enterClass="fadeinleft"
-        leaveClass="fadeoutleft"
-        class="box shadow-7 justify-content-center align-items-center border-round animation-duration-2000 animation-ease-in-out glass-card"
-        style="margin-bottom: 3rem"
-    >
-        <div class="text-center">
-            <h2 class="text-primary">Skills</h2>
-            <p>quello che ho imparato durante il corso di formazione:</p>
-        </div>
-        <div style="width: 100%" class="skills-array">
+    </div>
+</section>
+<section
+    pAnimateOnScroll
+    enterClass="fadeinleft"
+    leaveClass="fadeoutleft"
+    class="box shadow-7 justify-content-center align-items-center border-round animation-duration-2000 animation-ease-in-out glass-card"
+    style="margin-bottom: 3rem"
+>
+    <div class="text-center">
+        <h2 class="text-primary">Skills</h2>
+        <p>quello che ho imparato durante il corso di formazione:</p>
+    </div>
+    <div style="width: 100%" class="skills-array">
+        <div *ngFor="let item of skillsArray">
             <img
                 class="skill-logo"
                 src="{{ item.url }}"
                 alt="logo skill"
-                *ngFor="let item of skillsArray"
                 (click)="getSkillId(item.id)"
             />
+            <h5>{{ item.name }}</h5>
         </div>
-        <p-dialog
-            header="Header"
-            [modal]="true"
-            [(visible)]="visible"
-            [maximizable]="true"
-        >
-        </p-dialog>
-    </section>
+    </div>
+    <p-dialog
+        header="Header"
+        [modal]="true"
+        [(visible)]="visible"
+        [maximizable]="true"
+    >
+    </p-dialog>
 </section>
