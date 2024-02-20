@@ -90,9 +90,22 @@
                 class="skill-logo"
                 src="{{ item.url }}"
                 alt="logo skill"
-                (click)="showDialog()"
+                (click)="showDialog(item.id)"
             />
             <h5 class="text-center">{{ item.name }}</h5>
         </div>
     </div>
 </section>
+<p-dialog
+    [header]="selectedSkill.name"
+    *ngIf="selectedSkill"
+    [(visible)]="visible"
+    [modal]="true"
+    [style]="{ width: '50vw' }"
+    [draggable]="false"
+    [resizable]="false"
+>
+    <p class="m-0">
+        {{ selectedSkill.description }}
+    </p>
+</p-dialog>

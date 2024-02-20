@@ -6,88 +6,88 @@ import { Injectable } from "@angular/core";
 export class MyService {
   skillsArray = [
     {
-      skillId: 1,
+      id: 1,
       name: 'Angular',
       url: 'https://www.svgrepo.com/show/373427/angular.svg',
-      description: 'ciao sono angular'
+      description: "Durante il corso 24 Ore Business School ho scoperto Angular e ora ho una solida base. Non vedo l'ora di approfondire le mie conoscenze e diventare un professionista nel campo dello sviluppo web."
     },
     {
-      skillId: 2,
+      id: 2,
       name: 'HTML',
       url: 'https://www.svgrepo.com/show/452228/html-5.svg',
-      description: ''
+      description: "Ho incontrato HTML diverse volte, ma solo nel 2023 ho iniziato a studiarlo seriamente. Ho utilizzato un'app per apprendere le basi del web dev e ho approfondito durante il corso 24 Ore Business School."
     },
     {
-      skillId: 3,
+      id: 3,
       name: 'JavaScript',
       url: 'https://www.svgrepo.com/show/452045/js.svg',
-      description: ''
+      description: "Ho studiato JavaScript per un anno a scuola, ma non l'ho mai approfondito. Durante il corso 24 Ore Business School, abbiamo ripassato le basi del linguaggio, aprendo nuove prospettive per il mio sviluppo professionale."
     },
     {
-      skillId: 4,
+      id: 4,
       name: 'TypeScript',
       url: 'https://www.svgrepo.com/show/374146/typescript-official.svg',
-      description: ''
+      description: "Prima del corso 24 Ore Business School, non ero a conoscenza di TypeScript. Durante il corso, ho avuto l'opportunità di scoprire e apprendere le sue basi, aprendo nuove prospettive per il mio sviluppo professionale."
     },
     {
-      skillId: 5,
+      id: 5,
       name: 'Electron Framework',
       url: 'https://www.svgrepo.com/show/353689/electron.svg',
-      description: ''
+      description: "Durante il corso 24 Ore Business School, abbiamo trattato l'argomento del testing e convertito le web app in app desktop con Electron. Inoltre, abbiamo esplorato le basi di questo framework, ampliando così le nostre competenze nello sviluppo di applicazioni cross-platform."
     },
     {
-      skillId: 6,
+      id: 6,
       name: 'Ionic',
       url: 'https://www.svgrepo.com/show/373687/ionic.svg',
-      description: ''
+      description: "Durante il corso 24 Ore Business School, abbiamo sperimentato Ionic, un framework specifico per la produzione di web app mobile. È stato un'esperienza molto interessante e piacevole, che ha arricchito le nostre competenze nello sviluppo di applicazioni mobile."
     },
     {
-      skillId: 7,
+      id: 7,
       name: 'CSS',
       url: 'https://www.svgrepo.com/show/452185/css-3.svg',
-      description: ''
+      description: "CSS è un linguaggio che ho scoperto nel 2023, iniziando a utilizzare un'app per apprendere le basi dello sviluppo web. Spero di migliorare la mia conoscenza del linguaggio per creare progetti sempre più unici e di successo."
     },
     {
-      skillId: 8,
+      id: 8,
       name: 'GitHub',
       url: 'https://www.svgrepo.com/show/450156/github.svg',
-      description: ''
+      description: "GitHub è una piattaforma di hosting per il controllo delle versioni e la collaborazione nello sviluppo di software. Ho scoperto GitHub nel 2023 durante un corso su Coursera e ho apprezzato il suo potere nel versioning. Durante il corso 24 Ore Business School, abbiamo fatto ampio uso di GitHub per il controllo delle versioni e la collaborazione."
     },
     {
-      skillId: 9,
+      id: 9,
       name: 'Figma',
       url: 'https://www.svgrepo.com/show/452202/figma.svg',
-      description: ''
+      description: "Ho partecipato a un workshop con BSD Design per imparare le basi di Figma. Insieme a un collega del corso, abbiamo progettato un wireframe per una web app ipotetica."
     },
     {
-      skillId: 10,
+      id: 10,
       name: 'Nest.js',
       url: 'https://www.svgrepo.com/show/373863/nest-middleware-js.svg',
-      description: ''
+      description: "Durante il corso 24 Ore Business School, abbiamo affrontato una parte di back-end utilizzando Nest.js per creare un progetto base di REST API."
     },
     {
-      skillId: 11,
+      id: 11,
       name: 'NgRx',
       url: 'https://cdn.worldvectorlogo.com/logos/ngrx.svg',
-      description: ''
+      description: "Durante il corso 24 Ore Business School, abbiamo discusso dello stato nell'ambito dello sviluppo di applicazioni web e abbiamo approfondito Ngrx, un framework per la gestione dello stato in Angular basato sul pattern Redux. Abbiamo implementato i reducer, le actions e i selectors per gestire lo stato in modo efficiente e scalabile."
     },
     {
-      skillId: 12,
+      id: 12,
       name: 'PrimeNG',
       url: 'https://www.primefaces.org/presskit/primeng-logo.png',
-      description: ''
+      description: "Alla fine del corso 24 Ore Business School, abbiamo completato il nostro progetto creando un portfolio utilizzando PrimeNG, una libreria di componenti UI per Angular. Abbiamo inoltre rifattorizzato i vari progetti creati durante il corso in un'unica applicazione, dimostrando le nostre competenze nello sviluppo web."
     },
     {
-      skillId: 13,
+      id: 13,
       name: 'Bootstrap',
       url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png',
-      description: ''
+      description: "Durante il corso, abbiamo ampiamente utilizzato la libreria di Bootstrap per acquisire familiarità con le librerie UI. Inoltre, abbiamo utilizzato anche ngBootstrap per implementare componenti che migliorano l'esperienza utente e l'interfaccia delle nostre applicazioni."
     },
     {
-      skillId: 14,
+      id: 14,
       name: 'Postman',
       url: 'https://www.svgrepo.com/show/354202/postman-icon.svg',
-      description: ''
+      description: "Durante il workshop sul backend, abbiamo utilizzato Postman, un'applicazione che simula chiamate API. Ho trovato Postman molto utile per testare e sviluppare le API, poiché consente di eseguire richieste, visualizzare le risposte e testare vari scenari senza dover scrivere codice."
     },
   ];
 
