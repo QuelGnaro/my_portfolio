@@ -88,7 +88,6 @@
                                 class="preview"
                                 src="assets/home/mappa contenuti.png"
                                 alt="Mappa dei contenuti"
-                                width="500px"
                                 (click)="showDialog()"
                             />
                             <p-dialog
@@ -109,17 +108,42 @@
                 <p-accordionTab header="Wireframe">
                     <div>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia
-                            deserunt mollit anim id est laborum.
+                            Dopo aver creato una mappa di navigazione e una
+                            mappa dei contenuti, io e Marco ci siamo divisi il
+                            compito di creare lo scheletro dell'app, chiamato
+                            wireframe. Un wireframe è una rappresentazione
+                            visiva di un'interfaccia utente, che mostra la
+                            struttura e l'organizzazione degli elementi senza
+                            dettagli grafici. Questo ci ha permesso di
+                            concentrarci sulla disposizione degli elementi e sul
+                            flusso dell'interazione. Per rendere il wireframe
+                            più realistico, abbiamo studiato le interfacce di
+                            diverse società del settore per valutare quale
+                            design fosse il migliore dal punto di vista
+                            dell'interfaccia utente.
                         </p>
-                        <img src="" alt="wireframe" />
+                        <div class="flex flex-wrap gap-4">
+                            <img
+                                *ngFor="let item of imagesWireframe"
+                                class="preview"
+                                [src]="item.url"
+                                alt="wireframe"
+                                (click)="showDialog(item.id)"
+                            />
+                        </div>
+                        <p-dialog
+                            *ngIf="selectedImage"
+                            [dismissableMask]="true"
+                            [closeOnEscape]="true"
+                            [(visible)]="visible"
+                            [style]="{ width: '90vw' }"
+                        >
+                            <img
+                                [src]="selectedImage.url"
+                                alt="wireframe"
+                                width="100%"
+                            />
+                        </p-dialog>
                     </div>
                 </p-accordionTab>
                 <p-accordionTab header="palette">

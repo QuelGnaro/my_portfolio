@@ -80,7 +80,7 @@ export class MyService {
     {
       id: 13,
       name: 'Bootstrap',
-      url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png',
+      url: 'assets/home/bootstrap-logo.png',
       description: "Durante il corso, abbiamo ampiamente utilizzato la libreria di Bootstrap per acquisire familiarità con le librerie UI. Inoltre, abbiamo utilizzato anche ngBootstrap per implementare componenti che migliorano l'esperienza utente e l'interfaccia delle nostre applicazioni."
     },
     {
