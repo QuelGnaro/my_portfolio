@@ -23,6 +23,7 @@ export class FigmaComponent {
       url: 'assets/home/wireframe left.png',
     },
   ];
+
   showDialog(id?: number) {
     const result = this.imagesWireframe.find((image) => image.id === id);
     if (result) {
