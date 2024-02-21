@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: 'breweries', data: { breadcrumb: 'Breweries' }, loadChildren: () => import('./breweries/breweries.module').then(m => m.BreweriesModule) },
-  { path: 'imdb', data: { breadcrumb: 'IMDB' }, loadChildren: () => import('./imdb/imdb.module').then(m => m.ImdbModule) },
   { path: 'anime', data: { breadcrumb: 'Anime Search' }, loadChildren: () => import('./anime/anime.module').then(m => m.AnimeModule) },
   { path: 'harry-potter', data: { breadcrumb: 'Harry Potter' }, loadChildren: () => import('./harry-potter/harry-potter.module').then(m => m.HarryPotterModule) },
   { path: 'joke-app', data: { breadcrumb: 'Joke App' }, loadChildren: () => import('./chuck/joke.module').then(m => m.JokeModule) },

@@ -11,12 +11,12 @@
 <div class="my-6">
     <app-nav-bar></app-nav-bar>
 </div>
-<section class="background-dev">
+<section class="background-dev grid justify-content-center">
     <div
         pAnimateOnScroll
         enterClass="fadeinleft"
         leaveClass="fadeoutleft"
-        class="flex box shadow-4 justify-content-center align-items-center border-round animation-duration-2000 animation-ease-in-out glass-card"
+        class="flex box shadow-4 justify-content-center align-items-center border-round animation-duration-2000 animation-ease-in-out glass-card col-12 md:col-10 lg:col-8"
         style="margin-bottom: 3rem"
     >
         <div>
@@ -50,7 +50,7 @@
         pAnimateOnScroll
         enterClass="fadeinright"
         leaveClass="fadeoutright"
-        class="flex box shadow-7 justify-content-center align-items-center border-round animation-duration-2000 animation-ease-in-out glass-card"
+        class="flex box shadow-7 justify-content-center align-items-center border-round animation-duration-2000 animation-ease-in-out glass-card col-12 md:col-10 lg:col-8"
         style="margin-bottom: 3rem"
     >
         <div>
@@ -73,26 +73,28 @@
         </div>
     </div>
 </section>
-<section
-    pAnimateOnScroll
-    enterClass="fadeinleft"
-    leaveClass="fadeoutleft"
-    class="box shadow-7 justify-content-center align-items-center border-round animation-duration-2000 animation-ease-in-out glass-card"
-    style="margin-bottom: 3rem"
->
-    <div class="text-center">
-        <h2 class="text-primary">Skills</h2>
-        <p>Competenze acquisite durante il corso di formazione:</p>
-    </div>
-    <div style="width: 100%" class="skills-array">
-        <div *ngFor="let item of skillsArray">
-            <img
-                class="skill-logo"
-                src="{{ item.url }}"
-                alt="logo skill"
-                (click)="showDialog(item.id)"
-            />
-            <h5 class="text-center">{{ item.name }}</h5>
+<section class="grid justify-content-center">
+    <div
+        pAnimateOnScroll
+        enterClass="fadeinleft"
+        leaveClass="fadeoutleft"
+        class="box shadow-7 justify-content-center align-items-center border-round animation-duration-2000 animation-ease-in-out glass-card col-12 md:col-10 lg:col-8"
+        style="margin-bottom: 3rem"
+    >
+        <div class="text-center">
+            <h2 class="text-primary">Skills</h2>
+            <p>Competenze acquisite durante il corso di formazione:</p>
+        </div>
+        <div style="width: 100%" class="skills-array">
+            <div *ngFor="let item of skillsArray">
+                <img
+                    class="skill-logo"
+                    src="{{ item.url }}"
+                    alt="logo skill"
+                    (click)="showDialog(item.id)"
+                />
+                <h5 class="text-center">{{ item.name }}</h5>
+            </div>
         </div>
     </div>
 </section>
