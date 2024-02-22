@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-figma',
@@ -6,8 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './figma.component.scss'
 })
 export class FigmaComponent {
+  @ViewChild("videoPlayer", { static: false }) videoplayer: ElementRef;
+  name = "Angular";
   visible: boolean = false;
   selectedImage: any;
+  isPlay: boolean = false;
 
   imagesWireframe = [
     {
@@ -32,5 +35,39 @@ export class FigmaComponent {
     console.log(this.selectedImage);
 
     this.visible = true;
+  }
+
+  toggleVideo(event: any) {
+    this.videoplayer.nativeElement.play();
+  }
+  playPause() {
+    var myVideo: any = document.getElementById("my_video_1");
+    if (myVideo.paused) myVideo.play();
+    else myVideo.pause();
+  }
+
+  makeBig() {
+    var myVideo: any = document.getElementById("my_video_1");
+    myVideo.width = 560;
+  }
+
+  makeSmall() {
+    var myVideo: any = document.getElementById("my_video_1");
+    myVideo.width = 320;
+  }
+
+  makeNormal() {
+    var myVideo: any = document.getElementById("my_video_1");
+    myVideo.width = 420;
+  }
+
+  skip(value) {
+    let video: any = document.getElementById("my_video_1");
+    video.currentTime += value;
+  }
+
+  restart() {
+    let video: any = document.getElementById("my_video_1");
+    video.currentTime = 0;
   }
 }

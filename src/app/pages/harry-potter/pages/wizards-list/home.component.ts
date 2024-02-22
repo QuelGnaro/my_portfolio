@@ -31,4 +31,6 @@ export class HomeComponent implements OnInit {
   wizardDetail(id: string) {
     this.router.navigate([`my-projects/harry-potter/wizard-detail/${id}`]);
   }
+
+
 }
