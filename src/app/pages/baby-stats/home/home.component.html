@@ -1,18 +1,39 @@
-<header>
-    <a (click)="goToAddBaby()">add new baby</a>
-</header>
-<section class="grid justify-content-center">
-    <p-card
-        class="shadow-4 justify-content-center border-round col-12 md:col-10 lg:col-8"
-        *ngFor="let item of babies"
-    >
-        <div>
-            <h6>Name:</h6>
-            <p>{{ item.name }}</p>
+<section class="grid justify-content-center my-1">
+    <div class="card col-12 md:col-10 lg:col-8">
+        <h2 class="text-center text-primary">Babies List</h2>
+        <div class="flex justify-content-center">
+            <div *ngIf="!babies">
+                <h1>La lista è vuota aggiungi dei valori</h1>
+            </div>
         </div>
-        <div>
-            <h6>weight</h6>
-            <p>{{ item.weight }}</p>
+        <div
+            *ngFor="let item of babies"
+            class="card shadow-4 cursor-pointer hover:border-orange-700"
+            (click)="goToBabyDetail(item.id)"
+        >
+            <div>
+                <h6>Name:</h6>
+                <p>{{ item.name }}</p>
+            </div>
+            <div>
+                <h6>weight</h6>
+                <p>{{ item.weight }}</p>
+            </div>
         </div>
-    </p-card>
+        <div class="flex justify-content-evenly">
+            <button
+                pButton
+                icon="pi pi-plus"
+                class="p-button-rounded"
+                title="Add new baby"
+                (click)="goToAddBaby()"
+            ></button>
+        </div>
+    </div>
 </section>
+<p-scrollTop
+    target="window"
+    styleClass="custom-scrolltop"
+    [threshold]="100"
+    icon="pi pi-arrow-up"
+></p-scrollTop>

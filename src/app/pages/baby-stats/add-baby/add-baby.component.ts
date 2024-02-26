@@ -11,7 +11,7 @@ import { BabyStatsService } from 'src/app/private/services/baby-sats/baby-stats.
 })
 export class AddBabyComponent {
   babyRegistration: FormGroup;
-  babies: IBaby;
+  baby: IBaby;
   constructor(private fb: FormBuilder, private router: Router, private babyStatsService: BabyStatsService) {
     this.babyRegistration = this.fb.group({
       name: ['', Validators.required],
@@ -22,9 +22,20 @@ export class AddBabyComponent {
   }
 
   save() {
-    this.babies = this.babyRegistration.value;
-    this.babyStatsService.setBaby(this.babies);
+    this.baby = this.babyRegistration.value;
+    this.baby.id = this.genId();
+    this.babyStatsService.setBaby(this.baby);
     this.babyRegistration.reset();
+    console.log(this.baby);
+
+  }
+
+  backHome() {
+    this.router.navigate(['my-projects/baby-stats/home']);
+  }
+
+  genId() {
+    return Math.random().toString(36).substring(2) + (new Date()).getTime().toString(36);
   }
 
 

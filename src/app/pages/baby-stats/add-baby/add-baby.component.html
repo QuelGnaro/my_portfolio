@@ -1,67 +1,68 @@
-<p-card class="grid justify-content-center my-1">
-    <h2 class="text-center text-primary">add your baby</h2>
-    <form [formGroup]="babyRegistration" class="col-12">
-        <div class="field col">
-            <label for="name">{{ "NAME" }}</label>
-            <input
-                pInputText
-                id="name"
-                formControlName="name"
-                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-            />
-        </div>
-        <div class="field col">
-            <label for="sex">{{ "SEX" }}</label>
-            <div
-                class="card flex align-items-center justify-content-center gap-3"
-            >
-                <div>
-                    <p-radioButton
-                        id="sex"
-                        formControlName="sex"
-                        name="sex"
-                        value="M"
-                        inputId="sex"
-                    ></p-radioButton>
-                    <label for="sex" class="ml-2">M</label>
-                </div>
+<section class="grid justify-content-center my-1">
+    <div class="card col-12 md:col-10 lg:col-8">
+        <h2 class="text-center text-primary">Add your baby</h2>
+        <form [formGroup]="babyRegistration" class="col-12">
+            <div class="field col">
+                <label for="name">{{ "NAME" }}</label>
+                <input
+                    pInputText
+                    id="name"
+                    formControlName="name"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                />
+            </div>
+            <div class="field col">
+                <label for="sex">{{ "SEX" }}</label>
+                <div
+                    class="card flex align-items-center justify-content-center gap-3"
+                >
+                    <div>
+                        <p-radioButton
+                            id="sex"
+                            formControlName="sex"
+                            name="sex"
+                            value="M"
+                            inputId="sex"
+                        ></p-radioButton>
+                        <label for="sex" class="ml-2">M</label>
+                    </div>
 
-                <div>
-                    <p-radioButton
-                        id="sex"
-                        formControlName="sex"
-                        name="sex"
-                        value="F"
-                        inputId="sex"
-                    ></p-radioButton>
-                    <label for="sex" class="ml-2">F</label>
+                    <div>
+                        <p-radioButton
+                            id="sex"
+                            formControlName="sex"
+                            name="sex"
+                            value="F"
+                            inputId="sex"
+                        ></p-radioButton>
+                        <label for="sex" class="ml-2">F</label>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="field col">
-            <label for="born">{{ "BORN" }}</label>
-            <input
-                type="date"
-                pInputText
-                id="born"
-                formControlName="born"
-                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-            />
-        </div>
-        <div class="field col">
-            <label for="dateOfBirth">{{ "WEIGHT" }}</label>
-            <input
-                type="number"
-                pInputText
-                id="weight"
-                formControlName="weight"
-                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-            />
-        </div>
-        <p-button
-            label="Registrazione"
-            class="flex justify-content-center"
-            (click)="save()"
-        ></p-button>
-    </form>
-</p-card>
+            <div class="field col">
+                <label for="born">{{ "BORN" }}</label>
+                <input
+                    type="date"
+                    pInputText
+                    id="born"
+                    formControlName="born"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                />
+            </div>
+            <div class="field col">
+                <label for="dateOfBirth"> {{ "WEIGHT" }} </label>
+                <input
+                    type="number"
+                    pInputText
+                    id="weight"
+                    formControlName="weight"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                />
+            </div>
+            <div class="flex justify-content-center gap-3">
+                <p-button label="Registrazione" (click)="save()"></p-button>
+                <p-button label="Back Home" (click)="backHome()"></p-button>
+            </div>
+        </form>
+    </div>
+</section>

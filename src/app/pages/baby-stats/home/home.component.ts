@@ -21,5 +21,8 @@ export class HomeComponent {
     this.router.navigate(['my-projects/baby-stats/add-new-baby']);
   }
 
+  goToBabyDetail(id: string) {
+    this.router.navigate(['my-projects/baby-stats/baby-detail', id]);
+  }
 
 }

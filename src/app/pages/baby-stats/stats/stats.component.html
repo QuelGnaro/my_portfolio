@@ -1,1 +1,126 @@
-<p>stats works!</p>
+<section class="grid justify-content-center my-1">
+    <div class="card col-12 md:col-10 lg:col-8">
+        <h2 class="text-center text-primary">Add Stats</h2>
+        <p-accordion [activeIndex]="0">
+            <p-accordionTab header="Meals">
+                <form [formGroup]="mealRegistration">
+                    <div class="field col">
+                        <label for="meal">{{ "MEAL" }}</label>
+                        <input
+                            pInputText
+                            id="meal"
+                            formControlName="meal"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        />
+                    </div>
+                    <div class="field col">
+                        <label for="weight">{{ "WEIGHT" }}</label>
+                        <input
+                            pInputText
+                            id="weight"
+                            formControlName="weight"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        />
+                    </div>
+                    <div class="field col">
+                        <label for="date">{{ "DATE" }}</label>
+                        <input
+                            type="date"
+                            pInputText
+                            id="date"
+                            formControlName="date"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        />
+                    </div>
+                    <div class="field col">
+                        <label for="note">{{ "NOTE" }}</label>
+                        <input
+                            type="note"
+                            pInputText
+                            id="note"
+                            formControlName="note"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        />
+                    </div>
+                    <div class="flex justify-content-evenly">
+                        <p-button
+                            label="Add meal"
+                            (click)="saveMeal()"
+                            class="flex justify-content-center"
+                        ></p-button>
+                    </div>
+                </form>
+            </p-accordionTab>
+            <p-accordionTab header="Pees">
+                <form [formGroup]="peeRegistration">
+                    <div class="field col">
+                        <label for="date">{{ "DATE" }}</label>
+                        <input
+                            type="date"
+                            pInputText
+                            id="date"
+                            formControlName="date"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        />
+                    </div>
+                    <div class="field col">
+                        <label for="note">{{ "NOTE" }}</label>
+                        <input
+                            type="note"
+                            pInputText
+                            id="note"
+                            formControlName="note"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        />
+                    </div>
+                    <div class="flex justify-content-evenly">
+                        <p-button
+                            label="Add pee"
+                            (click)="savePee()"
+                            class="flex justify-content-center"
+                        ></p-button>
+                    </div>
+                </form>
+            </p-accordionTab>
+            <p-accordionTab header="Poops">
+                <form [formGroup]="poopRegistration">
+                    <div class="field col">
+                        <label for="date">{{ "DATE" }}</label>
+                        <input
+                            type="date"
+                            pInputText
+                            id="date"
+                            formControlName="date"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        />
+                    </div>
+                    <div class="field col">
+                        <label for="note">{{ "NOTE" }}</label>
+                        <input
+                            type="note"
+                            pInputText
+                            id="note"
+                            formControlName="note"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        />
+                    </div>
+                    <div class="flex justify-content-evenly">
+                        <p-button
+                            label="Add poop"
+                            (click)="savePoop()"
+                            class="flex justify-content-center"
+                        ></p-button>
+                    </div>
+                </form>
+            </p-accordionTab>
+        </p-accordion>
+        <div class="flex justify-content-center">
+            <button
+                pButton
+                label="back to Baby"
+                (click)="backToBaby()"
+                style="margin-top: 20px"
+            ></button>
+        </div>
+    </div>
+</section>

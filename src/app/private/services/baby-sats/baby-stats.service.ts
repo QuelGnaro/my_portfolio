@@ -18,4 +18,5 @@ export class BabyStatsService {
   getBabies() {
     return JSON.parse(localStorage.getItem('babies'));
   }
+
 }

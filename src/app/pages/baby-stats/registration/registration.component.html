@@ -1,47 +1,49 @@
-<p-card class="grid justify-content-center my-1">
-    <form [formGroup]="userRegistration" class="col-12">
-        <div class="field col">
-            <label for="name">{{ "NAME" }}</label>
-            <input
-                pInputText
-                id="name"
-                formControlName="name"
-                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-            />
-        </div>
-        <div class="field col">
-            <label for="surname">{{ "SURNAME" }}</label>
-            <input
-                pInputText
-                id="surname"
-                formControlName="surname"
-                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-            />
-        </div>
-        <div class="field col">
-            <label for="password">{{ "PASSWORD" }}</label>
-            <input
-                pInputText
-                type="password"
-                id="password"
-                formControlName="password"
-                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-            />
-        </div>
-        <div class="field col">
-            <label for="dateOfBirth">{{ "DATE OF BIRTH" }}</label>
-            <input
-                type="date"
-                pInputText
-                id="dateOfBirth"
-                formControlName="dateOfBirth"
-                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-            />
-        </div>
-        <p-button
-            label="Registrazione"
-            (click)="save()"
-            class="flex justify-content-center"
-        ></p-button>
-    </form>
-</p-card>
+<section class="grid justify-content-center my-1">
+    <div class="card col-12 md:col-10 lg:col-8">
+        <form [formGroup]="userRegistration" class="col-12">
+            <div class="field col">
+                <label for="name">{{ "NAME" }}</label>
+                <input
+                    pInputText
+                    id="name"
+                    formControlName="name"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                />
+            </div>
+            <div class="field col">
+                <label for="surname">{{ "SURNAME" }}</label>
+                <input
+                    pInputText
+                    id="surname"
+                    formControlName="surname"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                />
+            </div>
+            <div class="field col">
+                <label for="password">{{ "PASSWORD" }}</label>
+                <input
+                    pInputText
+                    type="password"
+                    id="password"
+                    formControlName="password"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                />
+            </div>
+            <div class="field col">
+                <label for="dateOfBirth">{{ "DATE OF BIRTH" }}</label>
+                <input
+                    type="date"
+                    pInputText
+                    id="dateOfBirth"
+                    formControlName="dateOfBirth"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                />
+            </div>
+            <p-button
+                label="Registrazione"
+                (click)="save()"
+                class="flex justify-content-center"
+            ></p-button>
+        </form>
+    </div>
+</section>
