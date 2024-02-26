@@ -160,31 +160,10 @@ export class BabyDetailComponent {
     const pees = this.baby.pees;
     const poops = this.baby.poops;
     const weights = this.baby.weights;
-    // this.fromStringToDate();
-    // meals.sort((a, b) => a.date.getTime() - b.date.getTime());
-    // pees.sort((a, b) => a.date.getTime() - b.date.getTime());
-    // poops.sort((a, b) => a.date.getTime() - b.date.getTime());
-    // weights.sort((a, b) => a.date.getTime() - b.date.getTime());
-
+    meals.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    pees.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    poops.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    weights.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }
-
-  // fromStringToDate() {
-  //   const meals = this.baby.meals;
-  //   const pees = this.baby.pees;
-  //   const poops = this.baby.poops;
-  //   const weights = this.baby.weights;
-  //   meals.map(meal => {
-  //     meal.date = new Date(meal.date);
-  //   });
-  //   pees.map(pee => {
-  //     pee.date = new Date(pee.date);
-  //   });
-  //   poops.map(poop => {
-  //     poop.date = new Date(poop.date);
-  //   });
-  //   weights.map(weight => {
-  //     weight.date = new Date(weight.date);
-  //   });
-  // }
 
 }

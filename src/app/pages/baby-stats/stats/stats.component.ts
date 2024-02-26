@@ -55,10 +55,8 @@ export class StatsComponent {
     this.meal = this.mealRegistration.value;
     this.meal.id = this.genId();
     this.baby.meals.push(this.meal);
-    // this.baby.meals.sort((a, b) => a.date.getTime() - b.date.getTime());
     this.updateBaby();
     this.mealRegistration.reset();
-    console.log(this.baby);
   }
   savePee() {
     this.pee = this.peeRegistration.value;

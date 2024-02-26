@@ -35,7 +35,7 @@ export class BabyStatsService {
 
   updateBaby(baby: Baby) {
     const index = this.babyArray.findIndex((b: Baby) => b.id === baby.id);
-    if (index) {
+    if (index >= 0) {
       this.babyArray[index] = baby;
       this.saveInLocalUpdate();
     }
