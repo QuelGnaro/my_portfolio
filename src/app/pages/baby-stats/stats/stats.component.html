@@ -35,7 +35,7 @@
                     <div class="field col">
                         <label for="note">{{ "NOTE" }}</label>
                         <input
-                            type="note"
+                            type="text"
                             pInputText
                             id="note"
                             formControlName="note"
@@ -66,7 +66,7 @@
                     <div class="field col">
                         <label for="note">{{ "NOTE" }}</label>
                         <input
-                            type="note"
+                            type="text"
                             pInputText
                             id="note"
                             formControlName="note"
@@ -97,7 +97,7 @@
                     <div class="field col">
                         <label for="note">{{ "NOTE" }}</label>
                         <input
-                            type="note"
+                            type="text"
                             pInputText
                             id="note"
                             formControlName="note"
@@ -108,6 +108,47 @@
                         <p-button
                             label="Add poop"
                             (click)="savePoop()"
+                            class="flex justify-content-center"
+                        ></p-button>
+                    </div>
+                </form>
+            </p-accordionTab>
+            <p-accordionTab header="Weight">
+                <form [formGroup]="weightRegistration">
+                    <div class="field col">
+                        <label for="date">{{ "DATE" }}</label>
+                        <input
+                            type="date"
+                            pInputText
+                            id="date"
+                            formControlName="date"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        />
+                    </div>
+                    <div class="field col">
+                        <label for="note">{{ "NOTE" }}</label>
+                        <input
+                            type="text"
+                            pInputText
+                            id="note"
+                            formControlName="note"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        />
+                    </div>
+                    <div class="field col">
+                        <label for="weight">{{ "WEIGHT" }}</label>
+                        <input
+                            type="number"
+                            pInputText
+                            id="weight"
+                            formControlName="weight"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        />
+                    </div>
+                    <div class="flex justify-content-evenly">
+                        <p-button
+                            label="Add weight"
+                            (click)="saveWeight()"
                             class="flex justify-content-center"
                         ></p-button>
                     </div>

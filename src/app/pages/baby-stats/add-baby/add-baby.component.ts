@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IBaby, Weight } from 'src/app/private/models/baby-stats/baby.model';
+import { Baby, IBaby, Weight } from 'src/app/private/models/baby-stats/baby.model';
 import { BabyStatsService } from 'src/app/private/services/baby-sats/baby-stats.service';
 
 @Component({
@@ -11,23 +11,26 @@ import { BabyStatsService } from 'src/app/private/services/baby-sats/baby-stats.
 })
 export class AddBabyComponent {
   babyRegistration: FormGroup;
-  baby: IBaby;
+  weightForm: FormGroup = new FormGroup({
+    date: new FormControl('', Validators.required),
+    weight: new FormControl('', Validators.required),
+    note: new FormControl('', Validators.required),
+  });
+  baby: Baby;
+
   constructor(private fb: FormBuilder, private router: Router, private babyStatsService: BabyStatsService) {
     this.babyRegistration = this.fb.group({
       name: ['', Validators.required],
       sex: ['', Validators.required],
       born: ['', Validators.required],
-      weight: ['', Validators.required]
     });
   }
 
   save() {
-    this.baby = this.babyRegistration.value;
+    this.baby = new Baby(this.babyRegistration.value);
     this.baby.id = this.genId();
     this.babyStatsService.setBaby(this.baby);
     this.babyRegistration.reset();
-    console.log(this.baby);
-
   }
 
   backHome() {
@@ -37,6 +40,5 @@ export class AddBabyComponent {
   genId() {
     return Math.random().toString(36).substring(2) + (new Date()).getTime().toString(36);
   }
-
 
 }

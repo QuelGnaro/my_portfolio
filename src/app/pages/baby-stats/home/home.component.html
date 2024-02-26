@@ -2,7 +2,7 @@
     <div class="card col-12 md:col-10 lg:col-8">
         <h2 class="text-center text-primary">Babies List</h2>
         <div class="flex justify-content-center">
-            <div *ngIf="!babies">
+            <div *ngIf="babies.length === 0">
                 <h1>La lista è vuota aggiungi dei valori</h1>
             </div>
         </div>

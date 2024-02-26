@@ -3,61 +3,163 @@
         <h2 class="text-primary text-center">Baby detail</h2>
         <div class="flex justify-content-start align-items-baseline">
             <h4>Name:</h4>
-            <p class="mx-3">exo</p>
+            <p class="mx-3">{{ baby.name }}</p>
         </div>
-        <div class="flex justify-content-start align-items-baseline">
+        <!-- <div class="flex justify-content-start align-items-baseline">
             <h4>Surname:</h4>
-            <p class="mx-3">exo</p>
-        </div>
+            <p class="mx-3"></p>
+        </div> -->
         <div class="flex justify-content-start align-items-baseline">
             <h4>Sex:</h4>
-            <p class="mx-3">exo</p>
+            <p class="mx-3">{{ baby.sex }}</p>
         </div>
         <div class="flex justify-content-start align-items-baseline">
             <h4>Birth:</h4>
-            <p class="mx-3">exo</p>
+            <p class="mx-3">{{ baby.born }}</p>
         </div>
         <div class="flex justify-content-between">
             <div class="flex justify-content-start align-items-baseline">
                 <h4>Weight:</h4>
-                <p class="mx-3">exo</p>
+                <p class="mx-3" *ngIf="baby.weights.length">
+                    {{ lastWeight }} g
+                </p>
+                <p class="mx-3" *ngIf="!baby.weights.length">
+                    Valore da aggiungere
+                </p>
             </div>
             <div>
                 <div class="flex justify-content-start align-items-baseline">
                     <h4>Update:</h4>
-                    <p class="mx-3">date</p>
+                    <p class="mx-3" *ngIf="baby.weights.length">
+                        {{ lastWeightDate }}
+                    </p>
+                    <p class="mx-3" *ngIf="!baby.weights.length">
+                        Valore da aggiungere
+                    </p>
                 </div>
             </div>
         </div>
-        <div *ngIf="!stats" class="flex justify-content-center">
+        <div
+            *ngIf="!stats"
+            class="flex justify-content-center"
+            style="margin-top: 20px"
+        >
             <h1>non ci sono stats</h1>
         </div>
-        <p-accordion [activeIndex]="0">
-            <p-accordionTab header="Meals">
-                <button pButton label="Chart" (click)="showDialog()"></button>
-
-                <!-- <ul>
-                    <li *ngFor="let item of baby.meals">
-                    {{item.date}} - {{item.weight}} - {{item.note}}
-                    </li>
-                </ul> -->
+        <p-accordion [activeIndex]="0" *ngIf="stats">
+            <p-accordionTab header="Meals" [disabled]="mealDisabled">
+                <p-table
+                    [value]="baby.meals"
+                    [tableStyle]="{ 'min-width': '20rem' }"
+                >
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Meal</th>
+                            <th>Weight</th>
+                            <th>Date</th>
+                            <th>Note</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-babymeals>
+                        <tr>
+                            <td>{{ babymeals.meal }}</td>
+                            <td>{{ babymeals.weight }} g</td>
+                            <td>{{ babymeals.date }}</td>
+                            <td>{{ babymeals.note }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+                <div class="flex justify-content-center">
+                    <button
+                        pButton
+                        label="Chart"
+                        (click)="showDialog()"
+                        style="margin-top: 20px"
+                    ></button>
+                </div>
             </p-accordionTab>
-            <p-accordionTab header="Pees">
-                <button pButton label="Chart" (click)="showDialog()"></button>
-                <!-- <ul>
-                    <li *ngFor="let item of baby.pees">
-                    {{item.date}} - {{item.weight}} - {{item.note}}
-                    </li>
-                </ul> -->
+            <p-accordionTab header="Pees" [disabled]="peeDisabled">
+                <p-table
+                    [value]="baby.pees"
+                    [tableStyle]="{ 'min-width': '20rem' }"
+                >
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Date</th>
+                            <th>Note</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-babypees>
+                        <tr>
+                            <td>{{ babypees.date }}</td>
+                            <td>{{ babypees.note }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+                <div class="flex justify-content-center">
+                    <button
+                        pButton
+                        label="Chart"
+                        (click)="showDialog()"
+                        style="margin-top: 20px"
+                    ></button>
+                </div>
             </p-accordionTab>
-            <p-accordionTab header="Poops">
-                <button pButton label="Chart" (click)="showDialog()"></button>
-
-                <!-- <ul>
-                    <li *ngFor="let item of baby.poops">
-                    {{item.date}} - {{item.weight}} - {{item.note}}
-                    </li>
-                </ul> -->
+            <p-accordionTab header="Poops" [disabled]="poopDisabled">
+                <p-table
+                    [value]="baby.poops"
+                    [tableStyle]="{ 'min-width': '20rem' }"
+                >
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Date</th>
+                            <th>Note</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-babypoops>
+                        <tr>
+                            <td>{{ babypoops.date }}</td>
+                            <td>{{ babypoops.note }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+                <div class="flex justify-content-center">
+                    <button
+                        pButton
+                        label="Chart"
+                        (click)="showDialog()"
+                        style="margin-top: 20px"
+                    ></button>
+                </div>
+            </p-accordionTab>
+            <p-accordionTab header="Weights" [disabled]="weightDisabled">
+                <p-table
+                    [value]="baby.weights"
+                    [tableStyle]="{ 'min-width': '20rem' }"
+                >
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Weight</th>
+                            <th>Date</th>
+                            <th>Note</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-babyweight>
+                        <tr>
+                            <td>{{ babyweight.weight }} g</td>
+                            <td>{{ babyweight.date }}</td>
+                            <td>{{ babyweight.note }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+                <div class="flex justify-content-center">
+                    <button
+                        pButton
+                        label="Chart"
+                        (click)="showDialog()"
+                        style="margin-top: 20px"
+                    ></button>
+                </div>
             </p-accordionTab>
         </p-accordion>
         <div class="flex justify-content-evenly" style="margin-top: 20px">
@@ -66,20 +168,6 @@
         </div>
     </div>
 </section>
-<div>
-    <h1>modifiche da aggiungere</h1>
-    [disabled]="!baby.meals" [disabled]="!baby.pees" [disabled]="!baby.poops"
-    <hr />
-    *ngif="stats" in accordion
-    <hr />
-    <code>
-        &lt;li *ngFor="let item of baby.poops"&gt; <br />
-        &#123; &#123; item.date &#125;&#125; - &#123; &#123; item.weight
-        &#125;&#125; - &#123; &#123; item.note &#125;&#125; <br />
-        &lt;/li&gt;
-    </code>
-</div>
-
 <p-dialog
     header="Meals"
     [(visible)]="visible"

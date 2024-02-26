@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { IBaby } from 'src/app/private/models/baby-stats/baby.model';
+import { Baby } from 'src/app/private/models/baby-stats/baby.model';
 import { BabyStatsService } from 'src/app/private/services/baby-sats/baby-stats.service';
 
 @Component({
@@ -10,11 +9,13 @@ import { BabyStatsService } from 'src/app/private/services/baby-sats/baby-stats.
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  babies: IBaby[] = [];
+  babies: Baby[] = [];
 
 
   constructor(private babyService: BabyStatsService, private router: Router,) {
-    this.babies = this.babyService.getBabies();
+    if (localStorage.getItem('babies')) {
+      this.babies = this.babyService.getBabies();
+    }
   }
 
   goToAddBaby() {
@@ -24,5 +25,6 @@ export class HomeComponent {
   goToBabyDetail(id: string) {
     this.router.navigate(['my-projects/baby-stats/baby-detail', id]);
   }
+
 
 }
