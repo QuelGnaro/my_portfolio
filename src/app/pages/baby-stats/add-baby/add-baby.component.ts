@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Baby, IBaby, Weight } from 'src/app/private/models/baby-stats/baby.model';
-import { BabyStatsService } from 'src/app/private/services/baby-sats/baby-stats.service';
+import { BabyStatsService } from 'src/app/private/services/baby-stats/baby-stats.service';
 
 @Component({
   selector: 'app-add-baby',

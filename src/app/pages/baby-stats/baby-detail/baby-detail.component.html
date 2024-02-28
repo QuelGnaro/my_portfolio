@@ -73,7 +73,7 @@
                     <button
                         pButton
                         label="Chart"
-                        (click)="showDialog()"
+                        (click)="showDialog('Meals')"
                         style="margin-top: 20px"
                     ></button>
                 </div>
@@ -100,7 +100,7 @@
                     <button
                         pButton
                         label="Chart"
-                        (click)="showDialog()"
+                        (click)="showDialog('Pees')"
                         style="margin-top: 20px"
                     ></button>
                 </div>
@@ -127,7 +127,7 @@
                     <button
                         pButton
                         label="Chart"
-                        (click)="showDialog()"
+                        (click)="showDialog('Poops')"
                         style="margin-top: 20px"
                     ></button>
                 </div>
@@ -156,7 +156,7 @@
                     <button
                         pButton
                         label="Chart"
-                        (click)="showDialog()"
+                        (click)="showDialog('Weights')"
                         style="margin-top: 20px"
                     ></button>
                 </div>
@@ -169,7 +169,7 @@
     </div>
 </section>
 <p-dialog
-    header="Meals"
+    [header]="chartLabel"
     [(visible)]="visible"
     [modal]="true"
     [style]="{ width: '100vw' }"
@@ -178,5 +178,30 @@
     [closeOnEscape]="true"
     [dismissableMask]="true"
 >
-    <p-chart type="line" [data]="data" [options]="options"></p-chart>
+    <div [ngSwitch]="chartLabel">
+        <p-chart
+            type="line"
+            [data]="dataMeals"
+            [options]="options"
+            *ngSwitchCase="'Meals'"
+        ></p-chart>
+        <p-chart
+            type="bar"
+            [data]="dataPees"
+            [options]="options"
+            *ngSwitchCase="'Pees'"
+        ></p-chart>
+        <p-chart
+            type="bar"
+            [data]="dataPoops"
+            [options]="options"
+            *ngSwitchCase="'Poops'"
+        ></p-chart>
+        <p-chart
+            type="line"
+            [data]="dataWeights"
+            [options]="options"
+            *ngSwitchCase="'Weights'"
+        ></p-chart>
+    </div>
 </p-dialog>

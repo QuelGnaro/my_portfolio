@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Baby } from 'src/app/private/models/baby-stats/baby.model';
-import { BabyStatsService } from 'src/app/private/services/baby-sats/baby-stats.service';
+import { BabyStatsService } from 'src/app/private/services/baby-stats/baby-stats.service';
 
 @Component({
   selector: 'app-baby-detail',
@@ -27,8 +27,12 @@ export class BabyDetailComponent {
   lastWeightDate: Date;
 
   // variabili chart
-  data: any;
+  dataMeals: any;
+  dataWeights: any;
+  dataPees: any;
+  dataPoops: any;
   options: any;
+  chartLabel: string = '';
 
   constructor(private babyService: BabyStatsService, private route: ActivatedRoute, private router: Router,) {
 
@@ -47,17 +51,59 @@ export class BabyDetailComponent {
   ngOnInit() {
     const mealsWeight = this.baby.meals.map(meal => +meal.weight);
     const mealsDate = this.baby.meals.map(meal => meal.date);
+    const peesDate = this.baby.pees.map(pee => pee.date);
+    const poopsDate = this.baby.poops.map(poop => poop.date);
+    const weightsDate = this.baby.weights.map(weight => weight.date);
+    const weightsWeight = this.baby.weights.map(weight => weight.weight);
     const documentStyle = getComputedStyle(document.documentElement);
     const textColor = documentStyle.getPropertyValue('--text-color');
     const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
     const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
-    this.data = {
+    this.dataMeals = {
       labels: [...mealsDate],
       datasets: [
         {
-          label: 'Meal Dataset',
+          label: 'Meals Dataset',
           data: [...mealsWeight],
+          fill: false,
+          borderColor: documentStyle.getPropertyValue('--blue-500'),
+          tension: 0.4
+        }
+      ]
+    };
+    this.dataPees = {
+      labels: [...peesDate],
+      datasets: [
+        {
+          label: 'Pees Dataset',
+          data: [],
+          fill: false,
+          borderColor: documentStyle.getPropertyValue('--blue-500'),
+          tension: 0.4
+        },
+
+      ]
+    };
+    this.dataPoops = {
+      labels: [...poopsDate],
+      datasets: [
+        {
+          label: 'Poops Dataset',
+          data: [],
+          fill: false,
+          borderColor: documentStyle.getPropertyValue('--blue-500'),
+          tension: 0.4
+        },
+
+      ]
+    };
+    this.dataWeights = {
+      labels: [...weightsDate],
+      datasets: [
+        {
+          label: 'Weights Dataset',
+          data: [...weightsWeight],
           fill: false,
           borderColor: documentStyle.getPropertyValue('--blue-500'),
           tension: 0.4
@@ -71,6 +117,7 @@ export class BabyDetailComponent {
         }
       ]
     };
+
 
     this.options = {
       maintainAspectRatio: false,
@@ -110,7 +157,8 @@ export class BabyDetailComponent {
     this.router.navigate(['my-projects/baby-stats/home']);
   }
 
-  showDialog() {
+  showDialog(value: string) {
+    this.chartLabel = value;
     this.visible = true;
   }
 

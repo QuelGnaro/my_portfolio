@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IUser } from 'src/app/private/models/baby-stats/user.model';
-import { RegistrationService } from 'src/app/private/services/baby-sats/registration.service';
+import { RegistrationService } from 'src/app/private/services/baby-stats/registration.service';
 
 @Component({
   selector: 'app-registration',
